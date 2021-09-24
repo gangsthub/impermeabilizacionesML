@@ -16,6 +16,7 @@
     "*.{js,vue}": "eslint"
   },
   "dependencies": {
+    "@graficos/graficols": "^0.1.2",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",

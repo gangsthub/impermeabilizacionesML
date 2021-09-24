@@ -6,23 +6,41 @@
       'vertical flex-column': direction === 'vertical',
     }"
   >
-    <v-btn
-      v-bind="buttonProps"
-      :small="$vuetify.breakpoint.smAndDown"
-      href="tel:+34 605 94 01 67"
-      class="py-2 px-4"
-      ><v-icon class="mr-2">mdi-whatsapp</v-icon> 605 94 01 67</v-btn
+    <span>
+      <div v-if="direction === 'vertical'" class="mr-2 text-center">
+        Llámanos
+      </div>
+      <v-btn
+        v-bind="buttonProps"
+        :small="$vuetify.breakpoint.smAndDown"
+        href="tel:+34 605 94 01 67"
+        class="py-2 px-4"
+        :class="{
+          'mb-5': direction === 'vertical',
+        }"
+        ><v-icon class="mr-2">{{
+          direction === 'vertical' ? 'mdi-phone' : 'mdi-whatsapp'
+        }}</v-icon>
+        605 94 01 67</v-btn
+      ></span
     >
-    <v-btn
-      v-bind="buttonProps"
-      :small="$vuetify.breakpoint.smAndDown"
-      href="tel:+34 605 94 01 67"
-      class="py-2 px-4"
-      :class="{
-        'ml-3': direction === 'horizontal',
-        'mt-3': direction === 'vertical',
-      }"
-      ><v-icon class="mr-2">mdi-whatsapp</v-icon> 605 94 01 67</v-btn
+    <span>
+      <div v-if="direction === 'vertical'" class="mr-2 text-center">
+        Llámanos
+      </div>
+      <v-btn
+        v-bind="buttonProps"
+        :small="$vuetify.breakpoint.smAndDown"
+        href="tel:+34 605 94 01 67"
+        class="py-2 px-4"
+        :class="{
+          'ml-3': direction === 'horizontal',
+        }"
+        ><v-icon class="mr-2">{{
+          direction === 'vertical' ? 'mdi-phone' : 'mdi-whatsapp'
+        }}</v-icon>
+        605 94 01 67</v-btn
+      ></span
     >
   </div>
 </template>

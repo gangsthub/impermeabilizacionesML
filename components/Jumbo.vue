@@ -1,33 +1,38 @@
 <template>
   <div class="jumbo-image">
-    <v-container>
+    <v-container class="overflow-hidden">
       <v-row no-gutters style="height: 60vh" tag="section">
-        <v-col style="z-index: 1; isolation: isolate">
-          <v-sheet
+        <v-sheet
+          style="z-index: 1; isolation: isolate"
+          class="
+            d-flex
+            flex-column
+            fill-height
+            transparent
+            align-start
+            justify-center
+            text-xs-left
+          "
+        >
+          <h1
             class="
-              d-flex
-              flex-column
-              fill-height
-              transparent
-              align-start
-              justify-center
-              text-xs-left
-              pl-16
+              text-wrap
+              font-weight-bold
+              text-md-h2 text-sm-h3 text-xs-h5
+              mb-3
             "
           >
-            <h1 class="font-weight-bold text-md-h2 text-xs-h5 mb-3">
-              Expertos en impermeabilizaciones
-            </h1>
+            <div>Expertos en</div>
+            <div>impermeabilizaciones</div>
+          </h1>
 
-            <h2 class="font-weight-light text-md-h4 text-xs-h6 mb-8">
-              Con más de <strong>20 años de experiencia</strong>
-            </h2>
-            <p>
-              <PrimaryButton color="secondary" to="/contacto" nuxt />
-            </p>
-          </v-sheet>
-        </v-col>
-        <v-spacer />
+          <h2 class="font-weight-light text-md-h4 text-xs-h6 mb-8">
+            Con más de <strong>20 años de experiencia</strong>
+          </h2>
+          <p>
+            <PrimaryButton color="secondary" to="/contacto" nuxt />
+          </p>
+        </v-sheet>
       </v-row>
     </v-container>
   </div>
@@ -63,5 +68,10 @@
       linear-gradient(to bottom, transparent, #fff);
     z-index: 0;
   }
+}
+
+.text-wrap {
+  word-break: break-word;
+  hyphens: auto;
 }
 </style>

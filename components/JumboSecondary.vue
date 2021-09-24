@@ -1,29 +1,42 @@
 <template>
-  <v-sheet min-height="600">
-    <v-row class="jumbo" no-gutters style="height: 60vh" tag="section">
-      <v-col style="z-index: 1; isolation: isolate">
-        <v-sheet
-          class="
-            d-flex
-            flex-column
-            fill-height
-            transparent
-            align-center
-            justify-start
-            pt-16
-          "
-        >
-          <h1 v-if="title" class="font-weight-bold text-h2 mb-3">
-            {{ title }}
-          </h1>
+  <v-sheet class="jumbo" min-height="600">
+    <v-container>
+      <v-row no-gutters style="height: 60vh" tag="section">
+        <v-col style="z-index: 1; isolation: isolate">
+          <v-sheet
+            class="
+              d-flex
+              flex-column
+              fill-height
+              transparent
+              align-center
+              justify-start
+              pt-16
+            "
+          >
+            <h1
+              v-if="title"
+              class="font-weight-bold text-md-h2 text-sm-h3 text-xs-h5 mb-3"
+            >
+              {{ title }}
+            </h1>
 
-          <h2 v-if="subtitle" class="font-weight-light text-h4 mb-8">
-            {{ subtitle }}
-          </h2>
-          <slot />
-        </v-sheet>
-      </v-col>
-    </v-row>
+            <h2
+              v-if="subtitle"
+              class="
+                font-weight-light
+                text-md-h4 text-xs-h6 text-center text-md-left
+                mb-8
+                xs-only:w80p
+              "
+            >
+              {{ subtitle }}
+            </h2>
+            <slot />
+          </v-sheet>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-sheet>
 </template>
 

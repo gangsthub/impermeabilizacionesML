@@ -1,6 +1,7 @@
-@import 'variables.scss';
-@import 'vuetify_resets.scss';
+@import 'variables';
+@import 'resets/vuetify';
+@import 'graficols';
 
-.w-100p {
-  width: 100%;
+.hb {
+  display: none;
 }

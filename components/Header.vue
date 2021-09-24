@@ -10,7 +10,7 @@
     color="white"
     class="header px-0"
   >
-    <v-toolbar flat class="first-nav secondary flex-row w-100p" tag="div">
+    <v-toolbar flat class="first-nav secondary flex-row w100p" tag="div">
       <v-spacer></v-spacer>
 
       <v-toolbar-title>
@@ -24,10 +24,10 @@
     </v-toolbar>
     <v-toolbar
       flat
-      class="second-nav transparent flex-row w-100p py-0 px-0"
+      class="second-nav transparent flex-row w100p py-0 px-0"
       tag="nav"
     >
-      <v-toolbar-items class="hidden-xs-only w-100p">
+      <v-toolbar-items class="hidden-xs-only w100p">
         <v-btn nuxt text to="/" active-class="transparent"> Logo </v-btn>
         <v-spacer></v-spacer>
         <v-spacer></v-spacer>

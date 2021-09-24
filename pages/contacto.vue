@@ -1,16 +1,79 @@
 <template>
   <div>
-    <JumboSecondary title="Contacto" subtitle="Pídenos presupuesto sin compromiso">
-
-    <Telephones direction="vertical" :button-props="{ color: 'info' }" />
-
+    <JumboSecondary
+      :title="title"
+      subtitle="Pídenos presupuesto sin compromiso. Llámanos para resolver tus dudas."
+    >
+      <h3 class="mb-8">Teléfonos y WhatsApp</h3>
+      <Telephones
+        direction="vertical"
+        :button-props="{ color: 'info', large: true }"
+      />
     </JumboSecondary>
+
+    <v-container>
+      <v-row justify="center">
+        <v-col class="first-col" cols="12" sm="8" md="6">
+          <Warantee />
+        </v-col>
+        <v-col cols="12" sm="8" md="6">
+          <h4 class="mb-4 text-h4 mt-10 mt-md-0">
+            <span class="hidden-sm-and-down">O </span>Escríbenos
+          </h4>
+          <p class="mb-8">
+            <span>Y te contactaremos lo antes posible!</span>
+          </p>
+          <ContactForm />
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
 <script>
+const title = 'Contacto'
+
 export default {
-  name: 'Contacto',
+  name: title,
   layout: 'default',
+  data() {
+    return {
+      title,
+    }
+  },
+  head: {
+    title,
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Contacto - Impermeabilizaciones en Barcelona',
+      },
+    ],
+  },
 }
 </script>
+
+<style lang="scss" scoped>
+.first-col {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 80%;
+    height: 1px;
+    background-color: #e9e9e9;
+  }
+  @media #{map-get($display-breakpoints, 'md-and-up')} {
+    &:after {
+      content: '';
+      top: 10%;
+      right: 5%;
+      width: 1px;
+      height: 80%;
+    }
+  }
+}
+</style>

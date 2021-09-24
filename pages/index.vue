@@ -36,37 +36,45 @@
       <v-card flat class="d-flex flex-column align-center">
         <v-responsive
           min-height="400"
-          class="w-100p"
-          content-class="w-100p d-flex flex-column align-center justify-space-around"
+          class="w100p"
+          content-class="w100p d-flex flex-column align-center justify-space-around"
         >
           <v-card-title tag="h3" class="text-h4 mb-10"
             >Otros servicios</v-card-title
           >
-          <v-card-text class="w-100p d-flex justify-space-around">
-            <v-card class="transparent" flat>
-              <v-img
-                height="150"
-                src="https://picsum.photos/id/178/371/150.jpg"
-              ></v-img>
-              <v-card-title class="pl-0">Formación de pendientes</v-card-title>
-              <v-card-text class="px-0">Hormigón celular</v-card-text>
-              <v-card-actions class="px-0"
-                ><PrimaryButton depressed to="/contacto" class="px-6"
-              /></v-card-actions>
-            </v-card>
-            <v-card class="transparent" flat>
-              <v-img
-                height="150"
-                src="https://picsum.photos/id/178/371/150.jpg"
-              ></v-img>
-              <v-card-title class="pl-0">Fachadas</v-card-title>
-              <v-card-text class="px-0"
-                >Proyectadas con corcho natural</v-card-text
-              >
-              <v-card-actions class="px-0"
-                ><PrimaryButton depressed to="/contacto" class="px-6"
-              /></v-card-actions>
-            </v-card>
+          <v-card-text class="w100p">
+            <v-row>
+              <v-col cols="12" sm="12" md="6">
+                <v-card class="transparent" flat>
+                  <v-img
+                    height="150"
+                    src="https://picsum.photos/id/178/371/150.jpg"
+                  ></v-img>
+                  <v-card-title class="pl-0"
+                    >Formación de pendientes</v-card-title
+                  >
+                  <v-card-text class="px-0">Hormigón celular</v-card-text>
+                  <v-card-actions class="px-0"
+                    ><PrimaryButton depressed to="/contacto" class="px-6"
+                  /></v-card-actions>
+                </v-card>
+              </v-col>
+              <v-col cols="12" sm="12" md="6">
+                <v-card class="transparent" flat>
+                  <v-img
+                    height="150"
+                    src="https://picsum.photos/id/178/371/150.jpg"
+                  ></v-img>
+                  <v-card-title class="pl-0">Fachadas</v-card-title>
+                  <v-card-text class="px-0"
+                    >Proyectadas con corcho natural</v-card-text
+                  >
+                  <v-card-actions class="px-0"
+                    ><PrimaryButton depressed to="/contacto" class="px-6"
+                  /></v-card-actions>
+                </v-card>
+              </v-col>
+            </v-row>
           </v-card-text>
         </v-responsive>
       </v-card>
@@ -94,13 +102,18 @@
                 >
               </h2>
               <v-row class="mt-8">
-                <v-col>
+                <v-col
+                  cols="12"
+                  sm="12"
+                  md="6"
+                  :order="$vuetify.breakpoint.smAndDown ? -1 : 'unset'"
+                >
                   <v-list flat dense color="transparent" class="pl-6">
                     <v-list-item> Garraf </v-list-item>
                     <v-list-item> Baix Penedes </v-list-item>
                   </v-list>
                 </v-col>
-                <v-col>
+                <v-col cols="12" sm="12" md="6">
                   <v-img
                     :src="
                       require('~/assets/img/Mapa_comarcal_de_Catalunya.svg')
