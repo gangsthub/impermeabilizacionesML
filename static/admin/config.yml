@@ -50,9 +50,9 @@ collections:
     editor:
       preview: false
     files:
-      - name: config
+      - name: home
         label: 🏠 Textos en página home
-        file: static/home.json
+        file: content/static/home.json
         fields:
           - widget: list
             name: zones
@@ -62,3 +62,15 @@ collections:
             required: true
             hint: 'Zonas en las que trabajamos'
             default: ['Garraf', 'Baix Penedes', 'Baix Llobregat']
+
+      - name: servicios
+        label: 🏠 Texto en la página de servicios
+        file: content/static/home.json
+        fields:
+          - widget: markdown
+            name: body
+            label: Texto principal
+            required: true
+            hint: 'Aparece nada mas entrar en la página de servicios'
+            modes: ['rich_text']
+            buttons: ['bold', 'italic']

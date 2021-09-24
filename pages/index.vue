@@ -80,7 +80,11 @@
       </v-card>
     </v-container>
     <!-- -->
-    <v-container v-intersect="onIntersect" class="mt-10">
+    <v-container
+      v-if="zones && zones.length"
+      v-intersect="onIntersect"
+      class="mt-10"
+    >
       <v-row>
         <v-col>
           <v-card
@@ -110,8 +114,9 @@
                   :order="$vuetify.breakpoint.smAndDown ? -1 : 'unset'"
                 >
                   <v-list flat dense color="transparent" class="pl-6">
-                    <v-list-item> Garraf </v-list-item>
-                    <v-list-item> Baix Penedes </v-list-item>
+                    <v-list-item v-for="(zone, i) of zones" :key="i">{{
+                      zone
+                    }}</v-list-item>
                   </v-list>
                 </v-col>
               </v-row>
@@ -124,6 +129,8 @@
 </template>
 
 <script>
+import homeTexts from '~/static/home.json'
+
 export default {
   data() {
     return {
@@ -160,7 +167,13 @@ export default {
         },
       ]),
       isZonesVisible: false,
+      zones: [],
     }
+  },
+  created() {
+    // eslint-disable-next-line no-console
+    const { zones } = homeTexts
+    this.zones = zones
   },
   methods: {
     onIntersect(entries) {
