@@ -1,6 +1,7 @@
 <template>
-  <v-sheet min-height="600">
-      <v-row class="jumbo" no-gutters style="height: 80vh" tag="section">
+  <div class="jumbo-image">
+    <v-container>
+      <v-row no-gutters style="height: 60vh" tag="section">
         <v-col style="z-index: 1; isolation: isolate">
           <v-sheet
             class="
@@ -14,12 +15,12 @@
               pl-16
             "
           >
-            <h1 class="font-weight-bold text-h2 mb-3">
+            <h1 class="font-weight-bold text-md-h2 text-xs-h5 mb-3">
               Expertos en impermeabilizaciones
             </h1>
 
-            <h2 class="font-weight-light text-h4 mb-8">
-              Con más de 20 años de experiencia
+            <h2 class="font-weight-light text-md-h4 text-xs-h6 mb-8">
+              Con más de <strong>20 años de experiencia</strong>
             </h2>
             <p>
               <PrimaryButton color="secondary" to="/contacto" nuxt />
@@ -28,11 +29,13 @@
         </v-col>
         <v-spacer />
       </v-row>
-    </v-sheet>
+    </v-container>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-.jumbo {
+@import '~vuetify/src/components/VStepper/_variables.scss';
+.jumbo-image {
   position: relative;
   &:before,
   &:after {
@@ -44,17 +47,20 @@
     right: 0;
   }
   &:before {
-    background-color: #fff;
-    background-image: url('~assets/img/bcn.jpg');
-    background-size: cover;
-    background-position-y: -128px;
     z-index: 0;
+    background-color: #fff;
+    background-image: url('~assets/img/img3.jpg');
+    background-size: cover;
+    background-position: 150px 40%;
+    @media #{map-get($display-breakpoints, 'md-and-down')} {
+      background-position: center;
+      background-attachment: fixed;
+    }
   }
   &:after {
     background: linear-gradient(to top, transparent, #fff),
-    linear-gradient(to left, transparent, #fff),
-    linear-gradient(to bottom, transparent 60%, #fff),
-      rgba(255, 255, 255, 0.6);
+      linear-gradient(to left, transparent, #fff),
+      linear-gradient(to bottom, transparent, #fff);
     z-index: 0;
   }
 }

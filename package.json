@@ -23,6 +23,9 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
+    "@iconify/icons-mdi": "^1.1.30",
+    "@iconify/json": "^1.1.405",
+    "@iconify/vue2": "^1.0.0",
     "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/vuetify": "^1.12.1",
@@ -38,6 +41,7 @@
     "jest": "^27.0.5",
     "lint-staged": "^10.5.4",
     "prettier": "^2.3.2",
+    "unplugin-icons": "^0.11.3",
     "vue-jest": "^3.0.4"
   }
 }

@@ -59,7 +59,7 @@ export default {
       themes: {
         light: {
           primary: colors.grey.darken4,
-          secondary: colors.blue.darken3,
+          secondary: colors.indigo.darken3,
           accent: colors.cyan.accent3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
