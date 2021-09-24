@@ -9,10 +9,14 @@ public_folder: '/images/uploads' # The src attribute for uploaded media will beg
 
 collections:
   - name: 'trabajos' # Used in routes, e.g., /admin/collections/blog
-    label: 'Trabajo' # Used in the UI
+    label: 'Trabajos Realizados' # Used in the UI
+    label_singular: 'Trabajo' # Used in the UI
+    editor:
+      preview: false
     folder: 'content/blog/posts' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    preview_path: 'trabajos/{{slug}}'
     format: 'json'
     fields: # The fields for each document, usually in front matter
       - { label: 'Título', name: 'title', widget: 'string', tagname: 'h1' }
