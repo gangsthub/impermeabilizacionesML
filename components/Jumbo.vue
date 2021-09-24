@@ -39,7 +39,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~vuetify/src/components/VStepper/_variables.scss';
 .jumbo-image {
   position: relative;
   &:before,
@@ -50,14 +49,14 @@
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 0;
   }
   &:before {
-    z-index: 0;
     background-color: #fff;
     background-image: url('~assets/img/img3.jpg');
     background-size: cover;
     background-position: 150px 40%;
-    @media #{map-get($display-breakpoints, 'md-and-down')} {
+    @include onMobile {
       background-position: center;
       background-attachment: fixed;
     }
@@ -66,7 +65,6 @@
     background: linear-gradient(to top, transparent, #fff),
       linear-gradient(to left, transparent, #fff),
       linear-gradient(to bottom, transparent, #fff);
-    z-index: 0;
   }
 }
 

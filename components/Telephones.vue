@@ -7,9 +7,6 @@
     }"
   >
     <span>
-      <div v-if="direction === 'vertical'" class="mr-2 text-center">
-        Llámanos
-      </div>
       <v-btn
         v-bind="buttonProps"
         :small="$vuetify.breakpoint.smAndDown"
@@ -25,9 +22,6 @@
       ></span
     >
     <span>
-      <div v-if="direction === 'vertical'" class="mr-2 text-center">
-        Llámanos
-      </div>
       <v-btn
         v-bind="buttonProps"
         :small="$vuetify.breakpoint.smAndDown"

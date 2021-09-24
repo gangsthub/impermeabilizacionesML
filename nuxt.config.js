@@ -1,17 +1,19 @@
 import colors from 'vuetify/es5/util/colors'
 
+const BRAND_NAME = 'Impermeabilizaciones ML'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   publicRuntimeConfig: {
-    BRAND_NAME: 'Impermeabilizaciones ML',
+    BRAND_NAME,
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - enrique',
-    title: 'enrique',
+    titleTemplate: `%s - ${BRAND_NAME}`,
+    title: `${BRAND_NAME}`,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -36,7 +38,13 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    // https://github.com/nuxt-community/style-resources-module
+    '@nuxtjs/style-resources',
   ],
+
+  styleResources: {
+    scss: ['~/assets/scss/_config/_main.scss'],
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -53,7 +61,7 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/scss/variables.scss'],
+    customVariables: ['~/assets/scss/_config/_vuetify_variables.scss'],
     theme: {
       dark: false,
       themes: {

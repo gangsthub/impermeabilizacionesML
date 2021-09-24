@@ -80,18 +80,19 @@
       </v-card>
     </v-container>
     <!-- -->
-    <v-container class="mt-10">
+    <v-container v-intersect="onIntersect" class="mt-10">
       <v-row>
         <v-col>
           <v-card
             flat
             rounded
-            class="mt-10"
+            class="zones mt-10"
             color="primary"
             dark
             min-height="500px"
+            :class="{ visible: isZonesVisible }"
           >
-            <v-card-text class="py-16">
+            <v-card-text class="py-16 relative z-1">
               <h2 class="text-h5 text-center mb-4">
                 <span class="d-inline-block">Trabajamos en toda</span>
                 <span class="d-inline-block"
@@ -112,13 +113,6 @@
                     <v-list-item> Garraf </v-list-item>
                     <v-list-item> Baix Penedes </v-list-item>
                   </v-list>
-                </v-col>
-                <v-col cols="12" sm="12" md="6">
-                  <v-img
-                    :src="
-                      require('~/assets/img/Mapa_comarcal_de_Catalunya.svg')
-                    "
-                  ></v-img>
                 </v-col>
               </v-row>
             </v-card-text>
@@ -165,36 +159,53 @@ export default {
           link: '/servicios/6',
         },
       ]),
+      isZonesVisible: false,
     }
+  },
+  methods: {
+    onIntersect(entries) {
+      this.isZonesVisible = entries[0].isIntersecting
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.jumbo {
+.zones {
   position: relative;
-  &:before,
-  &:after {
+  overflow: hidden;
+  &::before,
+  &::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-  }
-  &:before {
-    background-color: #fff;
-    background-image: url('~assets/img/bcn.jpg');
-    background-size: cover;
-    background-position-y: -128px;
     z-index: 0;
   }
-  &:after {
-    background: linear-gradient(to top, transparent, #fff),
-      linear-gradient(to left, transparent, #fff),
-      linear-gradient(to bottom, transparent 60%, #fff),
-      rgba(255, 255, 255, 0.6);
-    z-index: 0;
+  &::before {
+    background-image: url('~/assets/img/Mapa_comarcal_de_Catalunya.svg');
+    background-size: 50%;
+    background-position: 105% 130%;
+    @include onMobile {
+      background-size: 80%;
+      background-position: right bottom;
+    }
+    will-change: transform;
+    transition: transform 0.5s;
+    transform: rotateX(23deg) rotateY(3deg) scaleY(1.1);
+    opacity: 0.3;
   }
+  &::after {
+    background-image: linear-gradient(
+      to top,
+      transparent,
+      map-get($grey, 'darken-4')
+    );
+  }
+}
+.zones.visible::before {
+  transform: none;
 }
 </style>

@@ -11,7 +11,7 @@
       />
     </JumboSecondary>
 
-    <v-container>
+    <v-container class="py-16 mb-16">
       <v-row justify="center">
         <v-col class="first-col" cols="12" sm="8" md="6">
           <Warantee />
@@ -66,7 +66,7 @@ export default {
     height: 1px;
     background-color: #e9e9e9;
   }
-  @media #{map-get($display-breakpoints, 'md-and-up')} {
+  @include onDesktop {
     &:after {
       content: '';
       top: 10%;
