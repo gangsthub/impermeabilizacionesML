@@ -8,7 +8,7 @@ media_folder: 'static/images/uploads' # Media files will be stored in the repo u
 public_folder: '/images/uploads' # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: 'trabajos' # Used in routes, e.g., /admin/collections/blog
+  - name: trabajos # Used in routes, e.g., /admin/collections/blog
     label: 'Trabajos Realizados' # Used in the UI
     label_singular: 'Trabajo' # Used in the UI
     editor:
@@ -29,9 +29,34 @@ collections:
       - label: 'Tipo de Servicio'
         name: 'service'
         widget: 'select'
-        options: ['Terrazas', 'Lol']
+        options:
+          [
+            'Impermeabilizaciones de terrazas y cubiertas',
+            'Impermeabilización y aislamiento de muros',
+            'Impermeabilización y aislamiento de tejados',
+            'Pruebas de estanqueidad',
+            'Sellados',
+            'Condensaciones',
+          ]
       - label: 'Descripción'
         name: 'seoDescription'
         widget: 'text'
         required: true
-        pattern: ['^.{50,300}$', 'Must be within 50 and 300 chars']
+        pattern:
+          ['^.{50,}', 'Este texto tiene que estar al menos 50 caracteres']
+
+  - name: config # Used in routes
+    label: Textos en Páginas
+    editor:
+      preview: false
+    files:
+      - name: config
+        label: 🏠 Textos en página home
+        file: static/home.json
+        fields:
+          - widget: list
+            name: zones
+            label: Comarcas
+            required: true
+            hint: 'Zonas en las que trabajamos'
+            default: ['Garraf', 'Baix Penedes', 'Baix Llobregat']
