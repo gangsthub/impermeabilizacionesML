@@ -1,7 +1,7 @@
 <template>
-  <v-sheet class="jumbo" min-height="600">
+  <v-sheet class="jumbo mb-16" min-height="600">
     <v-container>
-      <v-row no-gutters style="height: 60vh" tag="section">
+      <v-row no-gutters :style="{ height: blockHeight }" tag="section">
         <v-col style="z-index: 1; isolation: isolate">
           <v-sheet
             class="
@@ -51,6 +51,10 @@ export default {
     subtitle: {
       type: String,
       default: '',
+    },
+    blockHeight: {
+      type: String,
+      default: '50vh',
     },
   },
 }

@@ -2,7 +2,7 @@
   <v-app>
     <Header />
 
-    <v-main>
+    <v-main class="pb-16">
       <Nuxt />
     </v-main>
 

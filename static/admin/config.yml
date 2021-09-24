@@ -74,3 +74,15 @@ collections:
             hint: 'Aparece nada mas entrar en la página de servicios'
             modes: ['rich_text']
             buttons: ['bold', 'italic']
+
+      - name: trabajos
+        label: ⛏ Texto en la página de trabajos
+        file: content/static/works.json
+        fields:
+          - widget: markdown
+            name: body
+            label: Texto principal
+            required: true
+            hint: 'Aparece nada mas entrar en la página de trabajps'
+            modes: ['rich_text']
+            buttons: ['bold', 'italic']

@@ -201,14 +201,14 @@ export default {
     background-image: url('~/assets/img/Mapa_comarcal_de_Catalunya.svg');
     background-size: 50%;
     background-position: 105% 130%;
+    will-change: transform;
+    transition: transform 0.5s;
+    transform: rotateX(40deg);
+    opacity: 0.3;
     @include onMobile {
       background-size: 80%;
       background-position: right bottom;
     }
-    will-change: transform;
-    transition: transform 0.5s;
-    transform: rotateX(23deg) rotateY(3deg) scaleY(1.1);
-    opacity: 0.3;
   }
   &::after {
     background-image: linear-gradient(
