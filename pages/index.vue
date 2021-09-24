@@ -129,7 +129,7 @@
 </template>
 
 <script>
-import homeTexts from '~/static/home.json'
+import homeTexts from '~/content/static/home.json'
 
 export default {
   data() {

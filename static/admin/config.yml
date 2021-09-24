@@ -64,8 +64,8 @@ collections:
             default: ['Garraf', 'Baix Penedes', 'Baix Llobregat']
 
       - name: servicios
-        label: 🏠 Texto en la página de servicios
-        file: content/static/home.json
+        label: 🚧 Texto en la página de servicios
+        file: content/static/services.json
         fields:
           - widget: markdown
             name: body
