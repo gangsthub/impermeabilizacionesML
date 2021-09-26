@@ -1,32 +1,46 @@
 <template>
-  <v-form :name="formName" action="/gracias" netlify netlify-honeypot="b">
+  <v-form
+    :name="formName"
+    action="/gracias"
+    method="POST"
+    netlify
+    data-netlify-honeypot="b"
+  >
     <p class="hb" aria-hidden="true">
       <label
         >Por favor, no rellenes este campo si eres una persona. Si este campo
-        tiene algún valor, no se enviará el formulario. Es una manerda de evitar
+        tiene algún valor, no se enviará el formulario. Es una manera de evitar
         spam. <input name="b" type="text"
       /></label>
     </p>
     <input type="hidden" name="form-name" :value="formName" />
     <v-text-field
       id="phone"
-      label="Teléfono *"
+      label="Teléfono"
       required
       outlined
       type="tel"
       name="phone"
       input-mode="decimal"
       prepend-icon="mdi-phone"
+      :rules="[rules.required]"
     ></v-text-field>
     <v-text-field
       id="place"
-      label="Localidad *"
+      label="Localidad"
       auto-complete="home city"
       required
       outlined
       name="place"
       prepend-icon="mdi-map-marker"
+      :rules="[rules.required]"
     ></v-text-field>
+    <v-textarea
+      outlined
+      name="comments"
+      label="Comentarios (opcional)"
+      prepend-icon="mdi-comment"
+    ></v-textarea>
     <v-btn large rounded color="secondary" type="submit" class="w90p ml-9"
       ><v-icon class="pr-5">mdi-email-fast</v-icon> Enviar</v-btn
     >
@@ -39,6 +53,9 @@ export default {
   data() {
     return {
       formName: 'Contact',
+      rules: {
+        required: (value) => !!value || 'Este campo es obligatorio.',
+      },
     }
   },
 }

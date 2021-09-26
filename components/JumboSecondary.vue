@@ -1,7 +1,7 @@
 <template>
-  <v-sheet class="jumbo mb-16" min-height="600">
+  <v-sheet class="jumbo mb-16">
     <v-container>
-      <v-row no-gutters :style="{ height: blockHeight }" tag="section">
+      <v-row no-gutters :style="{ minHeight }" tag="section">
         <v-col style="z-index: 1; isolation: isolate">
           <v-sheet
             class="
@@ -52,7 +52,7 @@ export default {
       type: String,
       default: '',
     },
-    blockHeight: {
+    minHeight: {
       type: String,
       default: '50vh',
     },
@@ -76,7 +76,9 @@ export default {
     background-color: #fff;
     background-image: url('~assets/img/bcn.jpg');
     background-size: cover;
-    background-position-y: -128px;
+    @include onDesktop {
+      background-position-y: -128px;
+    }
     z-index: 0;
   }
   &:after {

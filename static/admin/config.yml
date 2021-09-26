@@ -67,6 +67,12 @@ collections:
         label: 🚧 Texto en la página de servicios
         file: content/static/services.json
         fields:
+          - widget: text
+            name: subtitle
+            label: Subtítulo
+            required: true
+            default: 'Expertos en impermeabilización.'
+            hint: 'Aparece justo debajo del título principal'
           - widget: markdown
             name: body
             label: Texto principal
@@ -83,6 +89,17 @@ collections:
             name: body
             label: Texto principal
             required: true
-            hint: 'Aparece nada mas entrar en la página de trabajps'
+            hint: 'Aparece nada mas entrar en la página de trabajos'
             modes: ['rich_text']
             buttons: ['bold', 'italic']
+
+      - name: contacto
+        label: ✉ Texto en la página de contacto
+        file: content/static/contact.json
+        fields:
+          - widget: text
+            name: subtitle
+            label: Subtítulo
+            required: true
+            default: Pídenos presupuesto sin compromiso. Llámanos para resolver tus dudas.
+            hint: Aparece justo debajo del título principal

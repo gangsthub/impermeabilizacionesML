@@ -2,6 +2,11 @@
   <div>
     <Jumbo />
     <!-- -->
+    <Container>
+      <Warantee direction="horizontal" :fill="false" />
+    </Container>
+
+    <!-- -->
     <v-container>
       <v-row class="py-16 mt-10">
         <v-col

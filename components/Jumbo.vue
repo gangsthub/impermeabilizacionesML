@@ -1,7 +1,7 @@
 <template>
   <div class="jumbo-image">
     <v-container class="overflow-hidden">
-      <v-row no-gutters style="height: 60vh" tag="section">
+      <v-row no-gutters tag="section" class="min-h">
         <v-sheet
           style="z-index: 1; isolation: isolate"
           class="
@@ -39,6 +39,12 @@
 </template>
 
 <style lang="scss" scoped>
+.min-h {
+  height: 60vh;
+  @include onMobile {
+    height: 40vh;
+  }
+}
 .jumbo-image {
   position: relative;
   &:before,

@@ -11,7 +11,7 @@
       />
     </JumboSecondary>
 
-    <v-container class="py-16 mb-16">
+    <Container class="pb-16 mb-16">
       <v-row justify="center">
         <v-col class="first-col" cols="12" sm="8" md="6">
           <Warantee />
@@ -26,7 +26,7 @@
           <ContactForm />
         </v-col>
       </v-row>
-    </v-container>
+    </Container>
   </div>
 </template>
 

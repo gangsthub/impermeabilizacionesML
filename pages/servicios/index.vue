@@ -1,6 +1,11 @@
 <template>
   <div>
-    <JumboSecondary title="Servicios" :subtitle="subtitle" />
+    <JumboSecondary title="Servicios">
+      <Container>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <div class="text-left" v-html="body"></div>
+      </Container>
+    </JumboSecondary>
   </div>
 </template>
 
@@ -11,7 +16,7 @@ export default {
   name: 'Servicios',
   layout: 'default',
   created() {
-    this.subtitle = servicesTexts.body
+    this.body = servicesTexts.body
   },
 }
 </script>
