@@ -43,12 +43,23 @@
 <script>
 import servicesTexts from '~/content/static/services/page_texts.json'
 
+const cleanSlug = (string) => string.replace(/(^\.\/|\.json$)/gi, '')
+
 const getServices = () => {
   const context = require.context('~/content/static/services', false, /\.json$/)
   const services = context
     .keys()
     .filter((t) => t !== './page_texts.json') // filter page texts out
-    .map(context)
+    .reduce((acc, curr) => {
+      const slug = cleanSlug(curr)
+      return {
+        ...acc,
+        [slug]: {
+          ...context(curr),
+          slug,
+        },
+      }
+    }, {})
   return services
 }
 

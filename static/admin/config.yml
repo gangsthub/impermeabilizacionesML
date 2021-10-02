@@ -72,18 +72,6 @@ collections:
         widget: 'markdown'
         required: true
 
-      - widget: string
-        name: slug
-        label: Slug
-        required: true
-        pattern:
-          [
-            '^[a-z0-9]+(?:-[a-z0-9]+)*$',
-            'A slug can have no spaces or special characters',
-          ]
-        hint: >-
-          ruta asociada a cada entrada. (Ejemplo: "pruebas-de-estanqueidad")
-
       - label: 'Sistemas'
         name: 'systems'
         widget: 'list'
