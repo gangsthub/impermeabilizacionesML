@@ -81,7 +81,7 @@ collections:
             name: 'thumbnail'
             widget: 'image'
             required: true
-          - label: 'Texto corto, para previsualización'
+          - label: 'Descripción'
             name: 'short_text'
             widget: 'text'
             required: true
