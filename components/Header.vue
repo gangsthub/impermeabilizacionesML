@@ -48,16 +48,9 @@
 </template>
 
 <script>
+import hasMenu from '@/mixins/hasMenu'
 export default {
-  data() {
-    return {
-      menu: [
-        { title: 'Servicios', page: '/servicios' },
-        { title: 'Trabajos', page: '/trabajos' },
-        { title: 'Contacto', page: '/contacto' },
-      ],
-    }
-  },
+  mixins: [hasMenu],
 }
 </script>
 
