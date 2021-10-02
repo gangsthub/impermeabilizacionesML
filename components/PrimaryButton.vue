@@ -7,19 +7,11 @@ export default {
       default: 'primary',
     },
   },
-  render(h) {
-    return h(
-      'v-btn',
-      {
-        props: {
-          rounded: true,
-          large: true,
-          color: this.$props.color || 'primary',
-          ...this.$attrs,
-        },
-      },
-      this.$slots.default ? this.$slots.default : ['Pide tu presupuesto']
-    )
-  },
 }
 </script>
+
+<template>
+  <v-btn rounded large :color="color" v-bind="[$attrs]">
+    <slot>Pide tu presupuesto</slot>
+  </v-btn>
+</template>

@@ -45,7 +45,7 @@
           content-class="w100p d-flex flex-column align-center justify-space-around"
         >
           <v-card-title tag="h3" class="text-h4 mb-10"
-            >Otros servicios</v-card-title
+            >Más servicios</v-card-title
           >
           <v-card-text class="w100p">
             <v-row>

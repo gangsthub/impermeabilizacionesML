@@ -56,7 +56,11 @@ collections:
     preview_path: 'servicios/{{slug}}'
     format: 'json'
     fields: # The fields for each document, usually in front matter
-      - { label: 'Título', name: 'title', widget: 'string', tagname: 'h1' }
+      - label: 'Título'
+        name: 'title'
+        widget: 'string'
+        required: true
+
       - label: 'Imagen del servicio'
         name: 'thumbnail'
         widget: 'image'
@@ -71,20 +75,6 @@ collections:
         name: 'long_text'
         widget: 'markdown'
         required: true
-
-      - label: 'Sistemas'
-        name: 'systems'
-        widget: 'list'
-        fields:
-          - { label: 'Título', name: 'title', widget: 'string', tagname: 'h1' }
-          - label: 'Imagen del sistema'
-            name: 'thumbnail'
-            widget: 'image'
-            required: true
-          - label: 'Descripción'
-            name: 'short_text'
-            widget: 'text'
-            required: true
 
   - name: mas_servicios
     label: 'Otros Servicios'
