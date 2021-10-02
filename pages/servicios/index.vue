@@ -1,6 +1,6 @@
 <template>
   <div>
-    <JumboSecondary title="Servicios">
+    <JumboSecondary title="Servicios" :subtitle="subtitle">
       <Container>
         <!-- eslint-disable-next-line vue/no-v-html -->
         <div class="text-left" v-html="body"></div>
@@ -25,7 +25,11 @@
               service.short_text
             }}</v-card-text>
             <v-card-actions>
-              <PrimaryButton outlined :to="service.link" nuxt class="px-6"
+              <PrimaryButton
+                outlined
+                :to="'/servicios/' + service.slug"
+                nuxt
+                class="px-6"
                 >Leer más</PrimaryButton
               >
             </v-card-actions>
@@ -54,6 +58,7 @@ export default {
   data() {
     return {
       body: '',
+      subtitle: '',
       services: [],
     }
   },
@@ -61,6 +66,7 @@ export default {
     // eslint-disable-next-line no-console
     this.services = getServices()
     this.body = servicesTexts.body
+    this.subtitle = servicesTexts.subtitle
   },
 }
 </script>
