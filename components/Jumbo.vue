@@ -27,7 +27,7 @@
           </h1>
 
           <h2 class="font-weight-light text-md-h4 text-xs-h6 mb-8">
-            Con más de <strong>20 años de experiencia</strong>
+            Con más de <strong>30 años de experiencia</strong>
           </h2>
           <p>
             <PrimaryButton color="secondary" to="/contacto" nuxt />

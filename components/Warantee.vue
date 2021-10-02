@@ -63,7 +63,7 @@ export default {
     return {
       waranteeValues: [
         {
-          title: 'Garantía firmada',
+          title: 'Garantía',
           subtitle:
             'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit dolorem placeat illo molestias quidem, nesciunt voluptates?',
           icon: 'mdi-license',
