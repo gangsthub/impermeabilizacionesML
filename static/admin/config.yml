@@ -51,9 +51,9 @@ collections:
     create: true
     editor:
       preview: false
-    folder: 'content/static/services_list.json'
+    folder: 'content/static/services'
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
-    preview_path: 'trabajos/{{slug}}'
+    preview_path: 'servicios/{{slug}}'
     format: 'json'
     fields: # The fields for each document, usually in front matter
       - { label: 'Título', name: 'title', widget: 'string', tagname: 'h1' }
@@ -71,6 +71,18 @@ collections:
         name: 'long_text'
         widget: 'markdown'
         required: true
+
+      - widget: string
+        name: slug
+        label: Slug
+        required: true
+        pattern:
+          [
+            '^[a-z0-9]+(?:-[a-z0-9]+)*$',
+            'A slug can have no spaces or special characters',
+          ]
+        hint: >-
+          ruta asociada a cada entrada. (Ejemplo: "pruebas-de-estanqueidad")
 
       - label: 'Sistemas'
         name: 'systems'
@@ -106,7 +118,7 @@ collections:
 
       - name: servicios
         label: 🚧 Texto en la página de servicios
-        file: content/static/services.json
+        file: content/static/services/page_texts.json
         fields:
           - widget: text
             name: subtitle

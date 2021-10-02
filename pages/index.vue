@@ -28,8 +28,8 @@
               service.text
             }}</v-card-text>
             <v-card-actions>
-              <v-btn text color="primary" :to="service.link" nuxt
-                >Leer más</v-btn
+              <PrimaryButton outlined :to="service.link" nuxt class="px-6"
+                >Leer más</PrimaryButton
               >
             </v-card-actions>
           </v-card>
@@ -59,9 +59,11 @@
                     >Formación de pendientes</v-card-title
                   >
                   <v-card-text class="px-0">Hormigón celular</v-card-text>
-                  <v-card-actions class="px-0"
-                    ><PrimaryButton depressed to="/contacto" class="px-6"
-                  /></v-card-actions>
+                  <v-card-actions class="px-0">
+                    <v-btn text color="primary" to="/contacto" nuxt
+                      >Pedir presupuesto</v-btn
+                    >
+                  </v-card-actions>
                 </v-card>
               </v-col>
               <v-col cols="12" sm="12" md="6">
@@ -74,9 +76,11 @@
                   <v-card-text class="px-0"
                     >Proyectadas con corcho natural</v-card-text
                   >
-                  <v-card-actions class="px-0"
-                    ><PrimaryButton depressed to="/contacto" class="px-6"
-                  /></v-card-actions>
+                  <v-card-actions class="px-0">
+                    <v-btn text color="primary" to="/contacto" nuxt
+                      >Pedir presupuesto</v-btn
+                    >
+                  </v-card-actions>
                 </v-card>
               </v-col>
             </v-row>

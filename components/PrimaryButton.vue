@@ -4,18 +4,22 @@ export default {
   props: {
     color: {
       type: String,
-      default: 'primary'
+      default: 'primary',
     },
   },
   render(h) {
-    return h('v-btn', {
-      props: {
-        rounded: true,
-        large: true,
-        color: this.$props.color || 'primary',
-        ...this.$attrs,
-      }}, this.$slots.default ? this.$slots.default() : ['Pide tu presupuesto']
+    return h(
+      'v-btn',
+      {
+        props: {
+          rounded: true,
+          large: true,
+          color: this.$props.color || 'primary',
+          ...this.$attrs,
+        },
+      },
+      this.$slots.default ? this.$slots.default : ['Pide tu presupuesto']
     )
-  }
+  },
 }
 </script>
