@@ -15,7 +15,7 @@
       <v-toolbar flat class="first-nav secondary flex-row w100p" tag="div">
         <v-app-bar-nav-icon
           dark
-          class="hidden-sm -and-up"
+          class="hidden-sm-and-up"
           @click.stop="isDrawerOpen = !isDrawerOpen"
         ></v-app-bar-nav-icon>
         <v-spacer></v-spacer>
