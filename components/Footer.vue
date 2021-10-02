@@ -1,5 +1,5 @@
 <template>
-  <v-footer app absolute color="primary" ligth padless>
+  <v-footer color="primary" ligth padless class="overflow-hidden">
     <v-row>
       <v-col class="d-flex flex-column pa-6 mt-4">
         <v-btn
@@ -33,9 +33,9 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row class="w100p">
+    <v-row class="w100p mt-0">
       <v-card tile flat color="transparent" class="text-center w100p">
-        <v-card-text class="white--text text-center">
+        <v-card-text class="white--text text-center py-0 mb-8">
           {{ new Date().getFullYear() }} -
           <strong>{{ $config.BRAND_NAME }} &copy;</strong>
         </v-card-text>
