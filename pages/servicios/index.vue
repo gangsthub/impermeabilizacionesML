@@ -25,13 +25,15 @@
               service.short_text
             }}</v-card-text>
             <v-card-actions>
-              <PrimaryButton
-                outlined
-                :to="'/servicios/' + service.slug"
-                nuxt
-                class="px-6"
-                >Leer más</PrimaryButton
-              >
+              <ClientOnly>
+                <PrimaryButton
+                  outlined
+                  :to="'/servicios/' + service.slug"
+                  nuxt
+                  class="px-6"
+                  >Leer más</PrimaryButton
+                >
+              </ClientOnly>
             </v-card-actions>
           </v-card>
         </v-col>
