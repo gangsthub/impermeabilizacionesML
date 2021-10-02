@@ -1,0 +1,14 @@
+{
+  "title": "Impermeabilizaciones de terrazas y cubiertas",
+  "thumbnail": "/images/uploads/img-20160721-wa0002.jpg",
+  "short_text": "texto corto de imper",
+  "long_text": "texto largo de imper",
+  "slug": "impermeabilizaciones-de-terrazas-y-cubiertas",
+  "systems": [
+    {
+      "title": "Pinture",
+      "thumbnail": "/images/uploads/img-20160721-wa0002.jpg",
+      "short_text": "Descipción de pintura"
+    }
+  ]
+}
