@@ -21,7 +21,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: 'Título', name: 'title', widget: 'string', tagname: 'h1' }
       - {
-          label: 'Featured Image',
+          label: 'Imagen del trabajo',
           name: 'thumbnail',
           widget: 'image',
           required: true,
@@ -44,6 +44,47 @@ collections:
         required: true
         pattern:
           ['^.{50,}', 'Este texto tiene que estar al menos 50 caracteres']
+
+  - name: servicios
+    label: 'Servicios'
+    label_singular: 'Servicio'
+    create: true
+    editor:
+      preview: false
+    folder: 'content/static/services_list.json'
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    preview_path: 'trabajos/{{slug}}'
+    format: 'json'
+    fields: # The fields for each document, usually in front matter
+      - { label: 'Título', name: 'title', widget: 'string', tagname: 'h1' }
+      - label: 'Imagen del servicio'
+        name: 'thumbnail'
+        widget: 'image'
+        required: true
+
+      - label: 'Texto corto, para previsualización'
+        name: 'short_text'
+        widget: 'text'
+        required: true
+
+      - label: 'Texto largo, para cada una de las páginas de servicio'
+        name: 'long_text'
+        widget: 'markdown'
+        required: true
+
+      - label: 'Sistemas'
+        name: 'systems'
+        widget: 'list'
+        fields:
+          - { label: 'Título', name: 'title', widget: 'string', tagname: 'h1' }
+          - label: 'Imagen del sistema'
+            name: 'thumbnail'
+            widget: 'image'
+            required: true
+          - label: 'Texto corto, para previsualización'
+            name: 'short_text'
+            widget: 'text'
+            required: true
 
   - name: config # Used in routes
     label: Textos en Páginas
