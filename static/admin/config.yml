@@ -1,3 +1,4 @@
+locale: 'es'
 backend:
   name: github
   accept_roles:
@@ -5,6 +6,12 @@ backend:
   repo: 'gangsthub/impermeabilizacionesML'
 
 media_folder: 'static/images/uploads' # Media files will be stored in the repo under static/images/uploads
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: paulcloud
+    api_key: 417337637696625
+
 public_folder: '/images/uploads' # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
@@ -46,7 +53,7 @@ collections:
           ['^.{50,}', 'Este texto tiene que estar al menos 50 caracteres']
 
   - name: servicios
-    label: 'Servicios'
+    label: 'Servicios en Servicios'
     label_singular: 'Servicio'
     create: true
     editor:
@@ -77,8 +84,8 @@ collections:
         required: true
 
   - name: mas_servicios
-    label: 'Otros Servicios'
-    label_singular: 'Otro Servicio'
+    label: 'Servivios en Más Servicios'
+    label_singular: 'Servicio'
     create: true
     editor:
       preview: false

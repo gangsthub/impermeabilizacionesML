@@ -68,9 +68,9 @@
     }
   }
   &:after {
-    background: linear-gradient(to top, transparent, #fff),
+    background: linear-gradient(to top, transparent 30%, #fff),
       linear-gradient(to left, transparent, #fff),
-      linear-gradient(to bottom, transparent, #fff);
+      linear-gradient(to bottom, transparent 30%, #fff);
   }
 }
 

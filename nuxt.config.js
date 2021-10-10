@@ -67,6 +67,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/cloudinary',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -93,6 +94,12 @@ export default {
         },
       },
     },
+  },
+  cloudinary: {
+    // Cloudinary configuration options
+    cloudName: 'paulcloud',
+    apiKey: 417337637696625,
+    apiSecret: process.env.CLOUDINARY_API_SECRET,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

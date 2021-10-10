@@ -34,7 +34,7 @@
         class="second-nav transparent flex-row w100p py-0 px-0"
         tag="nav"
       >
-        <v-toolbar-items class="hidden-xs-only w100p">
+        <v-toolbar-items class="hidden-xs-only w100p white">
           <v-btn nuxt text to="/" active-class="transparent"> Logo </v-btn>
           <v-spacer></v-spacer>
           <v-spacer></v-spacer>
