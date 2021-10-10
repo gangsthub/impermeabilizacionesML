@@ -15,10 +15,7 @@
         :class="{
           'mb-5': direction === 'vertical',
         }"
-        ><v-icon class="mr-2">{{
-          direction === 'vertical' ? 'mdi-phone' : 'mdi-whatsapp'
-        }}</v-icon>
-        605 94 01 67</v-btn
+        ><v-icon class="mr-2">mdi-phone</v-icon> 605 94 01 67</v-btn
       ></span
     >
     <span>
@@ -30,10 +27,7 @@
         :class="{
           'ml-3': direction === 'horizontal',
         }"
-        ><v-icon class="mr-2">{{
-          direction === 'vertical' ? 'mdi-phone' : 'mdi-whatsapp'
-        }}</v-icon>
-        605 94 01 67</v-btn
+        ><v-icon class="mr-2">mdi-phone</v-icon> 605 94 01 67</v-btn
       ></span
     >
   </div>

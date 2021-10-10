@@ -21,7 +21,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: 'Título', name: 'title', widget: 'string', tagname: 'h1' }
       - {
-          label: 'Featured Image',
+          label: 'Imagen del trabajo',
           name: 'thumbnail',
           widget: 'image',
           required: true,
@@ -45,6 +45,59 @@ collections:
         pattern:
           ['^.{50,}', 'Este texto tiene que estar al menos 50 caracteres']
 
+  - name: servicios
+    label: 'Servicios'
+    label_singular: 'Servicio'
+    create: true
+    editor:
+      preview: false
+    folder: 'content/static/services'
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    preview_path: 'servicios/{{slug}}'
+    format: 'json'
+    fields: # The fields for each document, usually in front matter
+      - label: 'Título'
+        name: 'title'
+        widget: 'string'
+        required: true
+
+      - label: 'Imagen del servicio'
+        name: 'thumbnail'
+        widget: 'image'
+        required: true
+
+      - label: 'Texto corto, para previsualización'
+        name: 'short_text'
+        widget: 'text'
+        required: true
+
+      - label: 'Texto largo, para cada una de las páginas de servicio'
+        name: 'long_text'
+        widget: 'markdown'
+        required: true
+
+  - name: mas_servicios
+    label: 'Otros Servicios'
+    label_singular: 'Otro Servicio'
+    create: true
+    editor:
+      preview: false
+    folder: 'content/static/other_services'
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    preview_path: 'servicios/{{slug}}'
+    format: 'json'
+    fields: # The fields for each document, usually in front matter
+      - { label: 'Título', name: 'title', widget: 'string', tagname: 'h1' }
+      - label: 'Imagen del servicio'
+        name: 'thumbnail'
+        widget: 'image'
+        required: true
+
+      - label: 'Texto corto, para previsualización'
+        name: 'short_text'
+        widget: 'text'
+        required: true
+
   - name: config # Used in routes
     label: Textos en Páginas
     editor:
@@ -65,7 +118,7 @@ collections:
 
       - name: servicios
         label: 🚧 Texto en la página de servicios
-        file: content/static/services.json
+        file: content/static/services/page_texts.json
         fields:
           - widget: text
             name: subtitle

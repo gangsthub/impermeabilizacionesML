@@ -1,5 +1,5 @@
 <template>
-  <v-sheet class="jumbo mb-16">
+  <v-sheet class="jumbo mb-16" :style="{ '--bg-image': bgImageResolved }">
     <v-container>
       <v-row no-gutters :style="{ minHeight }" tag="section">
         <v-col style="z-index: 1; isolation: isolate">
@@ -56,6 +56,15 @@ export default {
       type: String,
       default: '50vh',
     },
+    bgImage: {
+      type: String,
+      default: '~/assets/img/bcn.jpg',
+    },
+  },
+  computed: {
+    bgImageResolved() {
+      return `url('${this.bgImage}')`
+    },
   },
 }
 </script>
@@ -63,8 +72,8 @@ export default {
 <style lang="scss" scoped>
 .jumbo {
   position: relative;
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: '';
     position: absolute;
     top: 0;
@@ -72,16 +81,17 @@ export default {
     left: 0;
     right: 0;
   }
-  &:before {
+  &::before {
     background-color: #fff;
-    background-image: url('~assets/img/bcn.jpg');
+    background-image: var(--bg-image);
+    background-position: center;
     background-size: cover;
     @include onDesktop {
       background-position-y: -128px;
     }
     z-index: 0;
   }
-  &:after {
+  &::after {
     background: linear-gradient(to top, transparent, #fff),
       linear-gradient(to left, transparent, #fff),
       linear-gradient(to bottom, transparent 60%, #fff),

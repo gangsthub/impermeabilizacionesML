@@ -1,6 +1,23 @@
 import colors from 'vuetify/es5/util/colors'
+import glob from 'glob-all'
 
 const BRAND_NAME = 'Impermeabilizaciones ML'
+
+const mapFilePathToRoute = (string, path, route) => {
+  return (
+    String(string)
+      // .replace('./content/static/services', 'servicios')
+      .replace(path, route)
+      .replace(/\.json$/, '')
+  )
+}
+
+const services = glob
+  .sync(['./content/static/services/**'])
+  .filter(
+    (f) => String(f).includes('.json') && !String(f).includes('page_texts.json')
+  )
+  .map((f) => mapFilePathToRoute(f, './content/static/services', 'servicios'))
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -94,5 +111,10 @@ export default {
         })
       }
     },
+  },
+
+  generate: {
+    fallback: true,
+    routes: [...services],
   },
 }
