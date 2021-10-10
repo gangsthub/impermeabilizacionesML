@@ -7,8 +7,9 @@
     </Container>
 
     <!-- -->
-    <v-container>
-      <v-row class="py-16 mt-10">
+    <v-container class="py-16">
+      <h2 class="text-center mb-12 text-h4">Servicios</h2>
+      <v-row>
         <v-col
           v-for="service in services"
           :key="service.title"
@@ -44,7 +45,7 @@
           class="w100p"
           content-class="w100p d-flex flex-column align-center justify-space-around"
         >
-          <v-card-title tag="h3" class="text-h4 mb-10"
+          <v-card-title tag="h3" class="text-h5 mb-10"
             >Otros servicios</v-card-title
           >
           <v-card-text class="w100p">
