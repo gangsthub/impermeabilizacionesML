@@ -7,7 +7,7 @@
     >
       <Container>
         <!-- eslint-disable-next-line vue/no-v-html -->
-        <p class="text-left" v-html="subtitle"></p>
+        <p v-html="subtitle"></p>
       </Container>
     </JumboSecondary>
     <Container>

@@ -1,9 +1,9 @@
 <template>
   <div>
-    <JumboSecondary :title="title" :subtitle="subtitle">
+    <JumboSecondary class="text-left" :title="title" :subtitle="subtitle">
       <Container>
         <!-- eslint-disable-next-line vue/no-v-html -->
-        <p class="text-left" v-html="body"></p>
+        <p v-html="body || 'Texto'"></p>
       </Container>
     </JumboSecondary>
 
@@ -15,7 +15,7 @@
 
 <script>
 import aboutUsTexts from '~/content/static/aboutus.json'
-const title = 'Quienes somos'
+const title = 'Quiénes somos'
 
 export default {
   name: title,

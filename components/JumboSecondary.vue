@@ -16,7 +16,12 @@
           >
             <h1
               v-if="title"
-              class="font-weight-bold text-md-h2 text-sm-h3 text-xs-h5 mb-3"
+              class="
+                font-weight-bold
+                text-md-h2 text-sm-h3 text-xs-h5
+                mb-3
+                px-5
+              "
             >
               {{ title }}
             </h1>
@@ -28,11 +33,12 @@
                 text-md-h4 text-xs-h6 text-center text-md-left
                 mb-8
                 xs-only:w80p
+                px-5
               "
             >
               {{ subtitle }}
             </h2>
-            <slot />
+            <div class="text-left px-5 w100p"><slot /></div>
           </v-sheet>
         </v-col>
       </v-row>
@@ -58,7 +64,7 @@ export default {
     },
     bgImage: {
       type: String,
-      default: '~/assets/img/bcn.jpg',
+      default: '~assets/img/bcn.jpg',
     },
   },
   computed: {

@@ -2,18 +2,18 @@
   <v-form
     :name="formName"
     action="/gracias"
-    method="POST"
-    netlify
-    data-netlify-honeypot="b"
+    method="post"
+    data-netlify
+    data-netlify-honeypot="bot-field"
   >
     <p class="hb" aria-hidden="true">
-      <label
+      <label for="form-name"
         >Por favor, no rellenes este campo si eres una persona. Si este campo
         tiene algún valor, no se enviará el formulario. Es una manera de evitar
-        spam. <input name="b" type="text"
-      /></label>
+        spam.</label
+      >
     </p>
-    <input type="hidden" name="form-name" :value="formName" />
+    <input id="form-name" type="hidden" name="form-name" :value="formName" />
     <v-text-field
       id="phone"
       label="Teléfono"

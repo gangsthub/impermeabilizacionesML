@@ -4,11 +4,13 @@
       :title="title"
       subtitle="Pídenos presupuesto sin compromiso. Llámanos para resolver tus dudas."
     >
-      <h3 class="mb-8">Teléfonos y WhatsApp</h3>
-      <Telephones
-        direction="vertical"
-        :button-props="{ color: 'info', large: true }"
-      />
+      <div class="text-center">
+        <h3 class="mb-8">Teléfonos y WhatsApp</h3>
+        <Telephones
+          direction="vertical"
+          :button-props="{ color: 'info', large: true }"
+        />
+      </div>
     </JumboSecondary>
 
     <Container class="pb-16 mb-16">

@@ -4,8 +4,11 @@
       :title="service.title"
       :bg-image="$cloudinary.image.url(service.thumbnail)"
     >
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="text-left text-h5" v-html="service.long_text"></div>
+      <!-- eslint-disable vue/no-v-html -->
+      <div
+        class="text-left text-h5 text-pre-wrap mt-10"
+        v-html="service.long_text"
+      ></div>
     </JumboSecondary>
   </div>
 </template>

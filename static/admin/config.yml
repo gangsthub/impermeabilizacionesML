@@ -123,47 +123,6 @@ collections:
             hint: 'Zonas en las que trabajamos'
             default: ['Garraf', 'Baix Penedes', 'Baix Llobregat']
 
-      - name: servicios
-        label: 🚧 Texto en la página de servicios
-        file: content/static/services/page_texts.json
-        fields:
-          - widget: text
-            name: subtitle
-            label: Subtítulo
-            required: true
-            default: 'Expertos en impermeabilización.'
-            hint: 'Aparece justo debajo del título principal'
-          - widget: markdown
-            name: body
-            label: Texto principal
-            required: true
-            hint: 'Aparece nada mas entrar en la página de servicios'
-            modes: ['rich_text']
-            buttons: ['bold', 'italic']
-
-      - name: trabajos
-        label: ⛏ Texto en la página de trabajos
-        file: content/static/works.json
-        fields:
-          - widget: markdown
-            name: body
-            label: Texto principal
-            required: true
-            hint: 'Aparece nada mas entrar en la página de trabajos'
-            modes: ['rich_text']
-            buttons: ['bold', 'italic']
-
-      - name: contacto
-        label: ✉ Texto en la página de contacto
-        file: content/static/contact.json
-        fields:
-          - widget: text
-            name: subtitle
-            label: Texto Principal
-            required: true
-            default: Pídenos presupuesto sin compromiso. Llámanos para resolver tus dudas.
-            hint: Aparece justo debajo del subtítulo
-
       - name: aboutus
         label: 👬 Texto en la página de quiénes somos
         file: content/static/aboutus.json
@@ -181,3 +140,60 @@ collections:
             hint: 'Aparece nada mas entrar en la página de trabajos'
             modes: ['rich_text']
             buttons: ['bold', 'italic']
+          - label: 'Imagen destacada'
+            name: 'thumbnail'
+            widget: 'image'
+            required: true
+
+      - name: servicios
+        label: 🚧 Texto en la página de servicios
+        file: content/static/services/page_texts.json
+        fields:
+          - widget: text
+            name: subtitle
+            label: Subtítulo
+            required: true
+            default: 'Expertos en impermeabilización.'
+            hint: 'Aparece justo debajo del título principal'
+          - widget: markdown
+            name: body
+            label: Texto principal
+            required: true
+            hint: 'Aparece nada mas entrar en la página de servicios'
+            modes: ['rich_text']
+            buttons: ['bold', 'italic']
+          - label: 'Imagen destacada'
+            name: 'thumbnail'
+            widget: 'image'
+            required: true
+
+      - name: trabajos
+        label: ⛏ Texto en la página de trabajos
+        file: content/static/works.json
+        fields:
+          - widget: markdown
+            name: body
+            label: Texto principal
+            required: true
+            hint: 'Aparece nada mas entrar en la página de trabajos'
+            modes: ['rich_text']
+            buttons: ['bold', 'italic']
+          - label: 'Imagen destacada'
+            name: 'thumbnail'
+            widget: 'image'
+            required: true
+
+      - name: contacto
+        label: ✉ Texto en la página de contacto
+        file: content/static/contact.json
+        fields:
+          - widget: text
+            name: subtitle
+            label: Texto Principal
+            required: true
+            default: Pídenos presupuesto sin compromiso. Llámanos para resolver tus dudas.
+            hint: Aparece justo debajo del subtítulo
+          - label: 'Imagen destacada'
+            name: 'thumbnail'
+            widget: 'image'
+            required: true
