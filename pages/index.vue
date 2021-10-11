@@ -53,6 +53,9 @@ import { getMoreServices, getServices } from '~/core/getContent'
 export default {
   asyncData() {
     const services = getServices()
+
+    // eslint-disable-next-line no-console
+    console.log(services)
     const moreServices = getMoreServices()
 
     return {
