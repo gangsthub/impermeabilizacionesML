@@ -63,6 +63,11 @@ collections:
     preview_path: 'servicios/{{slug}}'
     format: 'json'
     fields: # The fields for each document, usually in front matter
+      - label: 'Destacado'
+        name: 'isPromoted'
+        widget: 'boolean'
+        default: false
+
       - label: 'Título'
         name: 'title'
         widget: 'string'

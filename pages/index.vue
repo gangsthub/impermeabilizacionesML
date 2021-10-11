@@ -10,30 +10,19 @@
     <v-container class="py-16">
       <h2 class="text-center mb-12 text-h4">Servicios</h2>
       <v-row>
+        <v-col v-for="service in promotedServices" :key="service.title">
+          <ServiceCard :service="service" />
+        </v-col>
+      </v-row>
+      <v-row>
         <v-col
-          v-for="service in services"
+          v-for="service in notPromotedServices"
           :key="service.title"
           cols="12"
           sm="6"
           md="4"
         >
-          <v-card flat>
-            <v-img
-              height="250"
-              src="https://picsum.photos/id/178/371/250.jpg"
-            ></v-img>
-            <v-card-title class="primary--text">{{
-              service.title
-            }}</v-card-title>
-            <v-card-text class="grey--text text--darken-4">{{
-              service.text
-            }}</v-card-text>
-            <v-card-actions>
-              <PrimaryButton outlined :to="service.link" nuxt class="px-6"
-                >Leer más</PrimaryButton
-              >
-            </v-card-actions>
-          </v-card>
+          <ServiceCard :service="service" />
         </v-col>
       </v-row>
     </v-container>
@@ -140,50 +129,26 @@
 
 <script>
 import homeTexts from '~/content/static/home.json'
+import { getServices } from '~/core/getContent'
 
 export default {
+  asyncData() {
+    const { zones } = homeTexts
+    const services = getServices()
+
+    return {
+      services,
+      promotedServices: Object.values(services).filter((s) => s.isPromoted),
+      notPromotedServices: Object.values(services).filter((s) => !s.isPromoted),
+      zones,
+    }
+  },
   data() {
     return {
-      services: Object.freeze([
-        {
-          title: 'Servicio 1',
-          text: 'Texto del servicio 1 Texto del servicio 1 Texto del servicio 1 Texto del servicio 1 Texto del servicio 1 Texto del servicio 1 Texto del servicio 1 Texto del servicio 1 ',
-          link: '/servicios/1',
-        },
-        {
-          title: 'Servicio 2',
-          text: 'Texto del servicio 2 Texto del servicio 2 Texto del servicio 2 Texto del servicio 2 Texto del servicio 2 Texto del servicio 2 Texto del servicio 2 Texto del servicio 2 ',
-          link: '/servicios/2',
-        },
-        {
-          title: 'Servicio 3',
-          text: 'Texto del servicio 3 Texto del servicio 3 Texto del servicio 3 Texto del servicio 3 Texto del servicio 3 Texto del servicio 3 Texto del servicio 3 Texto del servicio 3 ',
-          link: '/servicios/3',
-        },
-        {
-          title: 'Servicio 4',
-          text: 'Texto del servicio 4 Texto del servicio 4 Texto del servicio 4 Texto del servicio 4 Texto del servicio 4 Texto del servicio 4 Texto del servicio 4 Texto del servicio 4 ',
-          link: '/servicios/4',
-        },
-        {
-          title: 'Servicio 5',
-          text: 'Texto del servicio 5 Texto del servicio 5 Texto del servicio 5 Texto del servicio 5 Texto del servicio 5 Texto del servicio 5 Texto del servicio 5 Texto del servicio 5 ',
-          link: '/servicios/5',
-        },
-        {
-          title: 'Servicio 6',
-          text: 'Texto del servicio 6 Texto del servicio 6 Texto del servicio 6 Texto del servicio 6 Texto del servicio 6 Texto del servicio 6 Texto del servicio 6 Texto del servicio 6 ',
-          link: '/servicios/6',
-        },
-      ]),
+      services: [],
       isZonesVisible: false,
       zones: [],
     }
-  },
-  created() {
-    // eslint-disable-next-line no-console
-    const { zones } = homeTexts
-    this.zones = zones
   },
   methods: {
     onIntersect(entries) {

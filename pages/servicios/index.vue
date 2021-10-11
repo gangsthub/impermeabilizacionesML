@@ -16,36 +16,7 @@
           sm="6"
           md="4"
         >
-          <v-card flat>
-            <cld-image
-              :public-id="service.thumbnail"
-              height="250"
-              gravity="auto:subject"
-              responsive
-              loading="lazy"
-              alt=""
-            >
-              <cld-transformation height="250" crop="scale" />
-              <cld-placeholder type="blur" />
-            </cld-image>
-            <v-card-title class="primary--text">{{
-              service.title
-            }}</v-card-title>
-            <v-card-text class="grey--text text--darken-4">{{
-              service.short_text
-            }}</v-card-text>
-            <v-card-actions>
-              <ClientOnly>
-                <PrimaryButton
-                  outlined
-                  :to="'/servicios/' + service.slug"
-                  nuxt
-                  class="px-6"
-                  >Leer más</PrimaryButton
-                >
-              </ClientOnly>
-            </v-card-actions>
-          </v-card>
+          <ServiceCard :service="service" />
         </v-col>
       </v-row>
     </v-container>
@@ -54,42 +25,25 @@
 
 <script>
 import servicesTexts from '~/content/static/services/page_texts.json'
-
-const cleanSlug = (string) => string.replace(/(^\.\/|\.json$)/gi, '')
-
-const getServices = () => {
-  const context = require.context('~/content/static/services', false, /\.json$/)
-  const services = context
-    .keys()
-    .filter((t) => t !== './page_texts.json') // filter page texts out
-    .reduce((acc, curr) => {
-      const slug = cleanSlug(curr)
-      return {
-        ...acc,
-        [slug]: {
-          ...context(curr),
-          slug,
-        },
-      }
-    }, {})
-  return services
-}
+import { getServices } from '~/core/getContent'
 
 export default {
   name: 'Servicios',
   layout: 'default',
+  asyncData() {
+    // eslint-disable-next-line no-console
+    return {
+      services: getServices(),
+      body: servicesTexts.body,
+      subtitle: servicesTexts.subtitle,
+    }
+  },
   data() {
     return {
       body: '',
       subtitle: '',
       services: [],
     }
-  },
-  created() {
-    // eslint-disable-next-line no-console
-    this.services = getServices()
-    this.body = servicesTexts.body
-    this.subtitle = servicesTexts.subtitle
   },
 }
 </script>

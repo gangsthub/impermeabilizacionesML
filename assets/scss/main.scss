@@ -14,3 +14,17 @@
 .relative {
   position: relative;
 }
+
+.cld-image,
+.cld > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
