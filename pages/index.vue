@@ -10,13 +10,8 @@
     <v-container class="py-16">
       <h2 class="text-center mb-12 text-h4">Servicios</h2>
       <v-row>
-        <v-col v-for="service in promotedServices" :key="service.title">
-          <ServiceCard :service="service" />
-        </v-col>
-      </v-row>
-      <v-row>
         <v-col
-          v-for="service in notPromotedServices"
+          v-for="service in services"
           :key="service.title"
           cols="12"
           sm="6"
@@ -28,55 +23,18 @@
     </v-container>
     <!-- -->
     <v-container class="other-services">
-      <v-card flat class="d-flex flex-column align-center">
-        <v-responsive
-          min-height="400"
-          class="w100p"
-          content-class="w100p d-flex flex-column align-center justify-space-around"
+      <h2 class="text-center mb-10 text-h4">Más servicios</h2>
+      <v-row>
+        <v-col
+          v-for="service in moreServices"
+          :key="service.title"
+          cols="12"
+          sm="6"
+          md="4"
         >
-          <v-card-title tag="h3" class="text-h4 mb-10"
-            >Más servicios</v-card-title
-          >
-          <v-card-text class="w100p">
-            <v-row>
-              <v-col cols="12" sm="12" md="6">
-                <v-card class="transparent" flat>
-                  <v-img
-                    height="150"
-                    src="https://picsum.photos/id/178/371/150.jpg"
-                  ></v-img>
-                  <v-card-title class="pl-0"
-                    >Formación de pendientes</v-card-title
-                  >
-                  <v-card-text class="px-0">Hormigón celular</v-card-text>
-                  <v-card-actions class="px-0">
-                    <v-btn text color="primary" to="/contacto" nuxt
-                      >Pedir presupuesto</v-btn
-                    >
-                  </v-card-actions>
-                </v-card>
-              </v-col>
-              <v-col cols="12" sm="12" md="6">
-                <v-card class="transparent" flat>
-                  <v-img
-                    height="150"
-                    src="https://picsum.photos/id/178/371/150.jpg"
-                  ></v-img>
-                  <v-card-title class="pl-0">Fachadas</v-card-title>
-                  <v-card-text class="px-0"
-                    >Proyectadas con corcho natural</v-card-text
-                  >
-                  <v-card-actions class="px-0">
-                    <v-btn text color="primary" to="/contacto" nuxt
-                      >Pedir presupuesto</v-btn
-                    >
-                  </v-card-actions>
-                </v-card>
-              </v-col>
-            </v-row>
-          </v-card-text>
-        </v-responsive>
-      </v-card>
+          <ServiceCard :service="service" />
+        </v-col>
+      </v-row>
     </v-container>
     <!-- -->
     <v-container
@@ -129,17 +87,17 @@
 
 <script>
 import homeTexts from '~/content/static/home.json'
-import { getServices } from '~/core/getContent'
+import { getMoreServices, getServices } from '~/core/getContent'
 
 export default {
   asyncData() {
     const { zones } = homeTexts
     const services = getServices()
+    const moreServices = getMoreServices()
 
     return {
       services,
-      promotedServices: Object.values(services).filter((s) => s.isPromoted),
-      notPromotedServices: Object.values(services).filter((s) => !s.isPromoted),
+      moreServices,
       zones,
     }
   },

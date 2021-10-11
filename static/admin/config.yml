@@ -26,7 +26,7 @@ collections:
     preview_path: 'trabajos/{{slug}}'
     format: 'json'
     fields: # The fields for each document, usually in front matter
-      - { label: 'Título', name: 'title', widget: 'string', tagname: 'h1' }
+      - { label: 'Título', name: 'title', widget: 'string' }
       - {
           label: 'Imagen del trabajo',
           name: 'thumbnail',
@@ -63,11 +63,6 @@ collections:
     preview_path: 'servicios/{{slug}}'
     format: 'json'
     fields: # The fields for each document, usually in front matter
-      - label: 'Destacado'
-        name: 'isPromoted'
-        widget: 'boolean'
-        default: false
-
       - label: 'Título'
         name: 'title'
         widget: 'string'
@@ -94,12 +89,12 @@ collections:
     create: true
     editor:
       preview: false
-    folder: 'content/static/other_services'
+    folder: 'content/static/more_services'
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     preview_path: 'servicios/{{slug}}'
     format: 'json'
     fields: # The fields for each document, usually in front matter
-      - { label: 'Título', name: 'title', widget: 'string', tagname: 'h1' }
+      - { label: 'Título', name: 'title', widget: 'string' }
       - label: 'Imagen del servicio'
         name: 'thumbnail'
         widget: 'image'
