@@ -31,9 +31,8 @@ export default {
   name: 'Servicios',
   layout: 'default',
   asyncData() {
-    // eslint-disable-next-line no-console
     return {
-      services: { ...getServices(), ...getMoreServices() },
+      services: [...getServices(), ...getMoreServices()],
       body: servicesTexts.body,
       subtitle: servicesTexts.subtitle,
     }
