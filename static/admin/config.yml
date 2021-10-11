@@ -159,7 +159,18 @@ collections:
         fields:
           - widget: text
             name: subtitle
-            label: Subtítulo
+            label: Texto Principal
             required: true
             default: Pídenos presupuesto sin compromiso. Llámanos para resolver tus dudas.
-            hint: Aparece justo debajo del título principal
+            hint: Aparece justo debajo del subtítulo
+
+      - name: aboutus
+        label: 👬 Texto en la página de quiénes somos
+        file: content/static/aboutus.json
+        fields:
+          - widget: text
+            name: subtitle
+            label: Texto Principal
+            required: true
+            default: Somos un grupo de profesionales con más de 30 años de experiencia.
+            hint: Aparece justo debajo del subtítulo

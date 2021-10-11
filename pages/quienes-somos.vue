@@ -1,0 +1,80 @@
+<template>
+  <div>
+    <JumboSecondary
+      :title="title"
+      subtitle="Somos un grupo de profesionales con más de 30 años de experiencia."
+    >
+      <h3 class="mb-8">Teléfonos y WhatsApp</h3>
+      <Telephones
+        direction="vertical"
+        :button-props="{ color: 'info', large: true }"
+      />
+    </JumboSecondary>
+
+    <Container class="pb-16 mb-16">
+      <v-row justify="center">
+        <v-col class="first-col" cols="12" sm="8" md="6">
+          <Warantee />
+        </v-col>
+        <v-col cols="12" sm="8" md="6">
+          <h4 class="mb-4 text-h4 mt-10 mt-md-0">
+            <span class="hidden-sm-and-down">O </span>Escríbenos
+          </h4>
+          <p class="mb-8">
+            <span>Y te contactaremos lo antes posible!</span>
+          </p>
+          <ContactForm />
+        </v-col>
+      </v-row>
+    </Container>
+  </div>
+</template>
+
+<script>
+const title = 'Quienes somos'
+
+export default {
+  name: title,
+  layout: 'default',
+  data() {
+    return {
+      title,
+    }
+  },
+  head: {
+    title,
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Quienes somos - Impermeabilizaciones en todo el área de Barcelona y parte de Tarragona',
+      },
+    ],
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.first-col {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 80%;
+    height: 1px;
+    background-color: #e9e9e9;
+  }
+  @include onDesktop {
+    &:after {
+      content: '';
+      top: 10%;
+      right: 5%;
+      width: 1px;
+      height: 80%;
+    }
+  }
+}
+</style>

@@ -9,7 +9,9 @@
     <!-- -->
     <div class="secondary white--text mb-16 overflow-hidden">
       <v-container class="py-12">
-        <h2 class="text-center font-bold mb-12 text-h3">Servicios</h2>
+        <h2 class="text-center font-bold mb-12 text-h3">
+          Impermeabilización de terrazas y cubiertas
+        </h2>
         <v-row class="mb-10">
           <v-col
             v-for="service of services"
@@ -17,18 +19,20 @@
             cols="12"
             sm="6"
             md="4"
+            class="mb-10"
           >
             <ServiceCard
               :key="service.title"
               :service="service"
               color="white"
+              clamped
             />
           </v-col>
         </v-row>
       </v-container>
     </div>
     <!-- -->
-    <v-container class="other-services">
+    <v-container class="other-services mb-16">
       <h2 class="text-center mb-10 text-h4">Más servicios</h2>
       <v-row>
         <v-col
@@ -38,12 +42,12 @@
           sm="6"
           md="4"
         >
-          <ServiceCard :service="service" static-card />
+          <ServiceCard class="mb-10" :service="service" static-card />
         </v-col>
       </v-row>
     </v-container>
     <!-- -->
-    <Zones />
+    <Zones class="pt-12" />
   </div>
 </template>
 
@@ -53,9 +57,6 @@ import { getMoreServices, getServices } from '~/core/getContent'
 export default {
   asyncData() {
     const services = getServices()
-
-    // eslint-disable-next-line no-console
-    console.log(services)
     const moreServices = getMoreServices()
 
     return {

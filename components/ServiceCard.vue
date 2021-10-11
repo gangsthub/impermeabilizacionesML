@@ -1,7 +1,7 @@
 <template>
   <v-card
     v-bind="$attrs"
-    class="rounded-lg"
+    class="rounded-lg h100p d-flex flex-column justify-space-between"
     :class="{
       'elevation-0': staticCard,
     }"
@@ -10,13 +10,16 @@
       <CardImage :src="service.thumbnail" />
     </nuxt-link>
     <CardImage v-else :src="service.thumbnail" />
-    <v-card-title class="px-6 primary--text text-wrap break-normal">{{
-      service.title
-    }}</v-card-title>
+    <v-card-title class="px-6 primary--text">
+      <h3 class="v-card__title pa-0 text-wrap break-normal">
+        {{ service.title }}
+      </h3>
+    </v-card-title>
     <v-card-text
-      class="px-6 grey--text text--darken-4 line-clamp-3 pb-0"
+      class="px-6 grey--text text--darken-4 pb-0 mb-auto"
       :class="{
         'mb-6': staticCard,
+        'line-clamp-3': clamped,
       }"
       >{{ service.short_text }}</v-card-text
     >
@@ -44,6 +47,11 @@ export default {
     },
     staticCard: {
       // no links
+      type: Boolean,
+      default: false,
+    },
+    clamped: {
+      // clamp description to 3 lines
       type: Boolean,
       default: false,
     },

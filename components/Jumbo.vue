@@ -62,6 +62,7 @@
     background-image: url('~assets/img/img3.jpg');
     background-size: cover;
     background-position: 150px 40%;
+    background-attachment: fixed;
     @include onMobile {
       background-position: center;
       background-attachment: fixed;
