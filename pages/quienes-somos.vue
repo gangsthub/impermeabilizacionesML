@@ -4,28 +4,14 @@
       :title="title"
       subtitle="Somos un grupo de profesionales con más de 30 años de experiencia."
     >
-      <h3 class="mb-8">Teléfonos y WhatsApp</h3>
-      <Telephones
-        direction="vertical"
-        :button-props="{ color: 'info', large: true }"
-      />
+      <Container>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <p class="text-left" v-html="body"></p>
+      </Container>
     </JumboSecondary>
 
     <Container class="pb-16 mb-16">
-      <v-row justify="center">
-        <v-col class="first-col" cols="12" sm="8" md="6">
-          <Warantee />
-        </v-col>
-        <v-col cols="12" sm="8" md="6">
-          <h4 class="mb-4 text-h4 mt-10 mt-md-0">
-            <span class="hidden-sm-and-down">O </span>Escríbenos
-          </h4>
-          <p class="mb-8">
-            <span>Y te contactaremos lo antes posible!</span>
-          </p>
-          <ContactForm />
-        </v-col>
-      </v-row>
+      <Warantee />
     </Container>
   </div>
 </template>
