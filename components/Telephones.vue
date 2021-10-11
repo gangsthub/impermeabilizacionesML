@@ -22,12 +22,12 @@
       <v-btn
         v-bind="buttonProps"
         :small="$vuetify.breakpoint.smAndDown"
-        href="tel:+34 605 94 01 67"
+        href="tel:+34 605 94 05 15"
         class="py-2 px-4"
         :class="{
           'ml-3': direction === 'horizontal',
         }"
-        ><v-icon class="mr-2">mdi-phone</v-icon> 605 94 01 67</v-btn
+        ><v-icon class="mr-2">mdi-phone</v-icon> 605 94 05 15</v-btn
       ></span
     >
   </div>

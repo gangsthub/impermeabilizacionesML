@@ -3,20 +3,16 @@
     <JumboSecondary
       title="Trabajos"
       subtitle="Últimos trabajos realizados"
-      min-height="30vh"
+      min-height="10vh"
     >
-      <Container>
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <p v-html="subtitle"></p>
-      </Container>
     </JumboSecondary>
     <Container>
       <v-row justify="space-around">
         <v-col v-for="(work, i) of works" :key="i" cols="12" xs="12">
           <v-card flat>
             <div class="d-flex flex-no-wrap justify-space-between">
-              <v-avatar class="ma-2" size="125" tile>
-                <v-img :src="work.thumbnail"></v-img>
+              <v-avatar class="ma-2" size="500" tile>
+                <CardImage :src="work.thumbnail" height="500px" />
               </v-avatar>
 
               <div class="flex">

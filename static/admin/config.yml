@@ -124,7 +124,7 @@ collections:
             default: ['Garraf', 'Baix Penedes', 'Baix Llobregat']
 
       - name: aboutus
-        label: 👬 Texto en la página de quiénes somos
+        label: 👬 Página de quiénes somos
         file: content/static/aboutus.json
         fields:
           - widget: text
@@ -146,7 +146,7 @@ collections:
             required: true
 
       - name: servicios
-        label: 🚧 Texto en la página de servicios
+        label: 🚧 Página de servicios
         file: content/static/services/page_texts.json
         fields:
           - widget: text
@@ -155,36 +155,23 @@ collections:
             required: true
             default: 'Expertos en impermeabilización.'
             hint: 'Aparece justo debajo del título principal'
-          - widget: markdown
-            name: body
-            label: Texto principal
-            required: true
-            hint: 'Aparece nada mas entrar en la página de servicios'
-            modes: ['rich_text']
-            buttons: ['bold', 'italic']
+
           - label: 'Imagen destacada'
             name: 'thumbnail'
             widget: 'image'
             required: true
 
       - name: trabajos
-        label: ⛏ Texto en la página de trabajos
+        label: ⛏ Página de trabajos
         file: content/static/works.json
         fields:
-          - widget: markdown
-            name: body
-            label: Texto principal
-            required: true
-            hint: 'Aparece nada mas entrar en la página de trabajos'
-            modes: ['rich_text']
-            buttons: ['bold', 'italic']
           - label: 'Imagen destacada'
             name: 'thumbnail'
             widget: 'image'
             required: true
 
       - name: contacto
-        label: ✉ Texto en la página de contacto
+        label: ✉ Página de contacto
         file: content/static/contact.json
         fields:
           - widget: text
