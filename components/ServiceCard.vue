@@ -1,24 +1,14 @@
 <template>
   <v-card flat>
-    <nuxt-link :to="link">
-      <cld-image
-        :public-id="service.thumbnail"
-        height="250"
-        gravity="auto:subject"
-        crop="scale"
-        loading="lazy"
-        class="cld"
-        alt=""
-      >
-        <cld-transformation height="250" />
-        <cld-placeholder type="blur" />
-      </cld-image>
+    <nuxt-link v-if="!staticCard" :to="link">
+      <CardImage :src="service.thumbnail" />
     </nuxt-link>
+    <CardImage v-else :src="service.thumbnail" />
     <v-card-title class="primary--text">{{ service.title }}</v-card-title>
     <v-card-text class="grey--text text--darken-4 line-clamp-3 pb-0">{{
       service.short_text
     }}</v-card-text>
-    <v-card-actions class="mt-4">
+    <v-card-actions v-if="!staticCard" class="mt-4">
       <ClientOnly>
         <PrimaryButton outlined :to="link" nuxt class="px-6"
           >Leer más</PrimaryButton
@@ -39,6 +29,11 @@ export default {
         slug: '',
         thumbnail: '',
       }),
+    },
+    staticCard: {
+      // no links
+      type: Boolean,
+      default: false,
     },
   },
   computed: {

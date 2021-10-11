@@ -25,7 +25,7 @@
 
 <script>
 import servicesTexts from '~/content/static/services/page_texts.json'
-import { getServices } from '~/core/getContent'
+import { getServices, getMoreServices } from '~/core/getContent'
 
 export default {
   name: 'Servicios',
@@ -33,7 +33,7 @@ export default {
   asyncData() {
     // eslint-disable-next-line no-console
     return {
-      services: getServices(),
+      services: { ...getServices(), ...getMoreServices() },
       body: servicesTexts.body,
       subtitle: servicesTexts.subtitle,
     }
