@@ -2,6 +2,12 @@
   list-style: none;
 }
 
-.v-card {
+:root .v-card {
   overflow: hidden;
+  transition-property: box-shadow, opacity, transform;
+}
+
+:root .break-normal {
+  word-break: normal;
+  overflow-wrap: normal;
 }

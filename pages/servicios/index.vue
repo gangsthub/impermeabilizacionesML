@@ -16,7 +16,7 @@
           sm="6"
           md="4"
         >
-          <ServiceCard :service="service" />
+          <ServiceCard :service="service" flat />
         </v-col>
       </v-row>
     </v-container>

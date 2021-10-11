@@ -7,14 +7,14 @@ const getServicesFromContext = (context) => {
     .reduce((acc, curr) => {
       const slug = cleanSlug(curr)
       const obj = context(curr)
-      return {
+      return [
         ...acc,
-        [slug]: {
+        {
           ...obj,
           slug,
         },
-      }
-    }, {})
+      ]
+    }, [])
 }
 export const getServices = () => {
   const context = require.context(`~/content/static/services`, false, /\.json$/)
