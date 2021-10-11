@@ -97,9 +97,10 @@ export default {
   },
   cloudinary: {
     // Cloudinary configuration options
-    cloudName: 'paulcloud',
-    apiKey: 417337637696625,
+    cloudName: process.env.CLOUDINARY_CLOUDNAME,
+    apiKey: process.env.CLOUDINARY_API_KEY,
     apiSecret: process.env.CLOUDINARY_API_SECRET,
+    useComponent: true, // use Vue components
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -17,7 +17,17 @@
           md="4"
         >
           <v-card flat>
-            <v-img height="250" :src="service.thumbnail"></v-img>
+            <cld-image
+              :public-id="service.thumbnail"
+              height="250"
+              gravity="auto:subject"
+              responsive
+              loading="lazy"
+              alt=""
+            >
+              <cld-transformation height="250" crop="scale" />
+              <cld-placeholder type="blur" />
+            </cld-image>
             <v-card-title class="primary--text">{{
               service.title
             }}</v-card-title>

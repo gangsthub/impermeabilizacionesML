@@ -1,6 +1,9 @@
 <template>
   <div>
-    <JumboSecondary :title="service.title" :bg-image="service.thumbnail">
+    <JumboSecondary
+      :title="service.title"
+      :bg-image="$cloudinary.image.url(service.thumbnail)"
+    >
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="text-left text-h5" v-html="service.long_text"></div>
     </JumboSecondary>
@@ -12,8 +15,6 @@ export default {
   name: 'ServiciosDynamic',
   layout: 'default',
   async asyncData({ params, error }) {
-    // eslint-disable-next-line no-console
-    console.log({ p: params.slug })
     let service
     try {
       service = await import(
