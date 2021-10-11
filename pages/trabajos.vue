@@ -43,6 +43,7 @@
 <script>
 import worksTexts from '~/content/static/works.json'
 
+// gets all the json files in the posts folder
 const getWorks = () => {
   const context = require.context('~/content/blog/posts', false, /\.json$/)
   const works = context.keys().map(context)
@@ -55,6 +56,7 @@ export default {
   data() {
     return {
       works: [],
+      subtitle: '',
     }
   },
   created() {

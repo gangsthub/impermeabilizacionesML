@@ -1,9 +1,6 @@
 <template>
   <div>
-    <JumboSecondary
-      :title="title"
-      subtitle="Somos un grupo de profesionales con más de 30 años de experiencia."
-    >
+    <JumboSecondary :title="title" :subtitle="subtitle">
       <Container>
         <!-- eslint-disable-next-line vue/no-v-html -->
         <p class="text-left" v-html="body"></p>
@@ -17,6 +14,7 @@
 </template>
 
 <script>
+import aboutUsTexts from '~/content/static/aboutus.json'
 const title = 'Quienes somos'
 
 export default {
@@ -25,6 +23,8 @@ export default {
   data() {
     return {
       title,
+      subtitle: '',
+      body: '',
     }
   },
   head: {
@@ -37,6 +37,10 @@ export default {
           'Quienes somos - Impermeabilizaciones en todo el área de Barcelona y parte de Tarragona',
       },
     ],
+  },
+  created() {
+    this.subtitle = aboutUsTexts.subtitle
+    this.body = aboutUsTexts.body
   },
 }
 </script>

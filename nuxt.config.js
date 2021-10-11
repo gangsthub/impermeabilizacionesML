@@ -1,7 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 import glob from 'glob-all'
 
-const BRAND_NAME = 'Impermeabilizaciones ML'
+const BRAND_NAME = 'Impermeabilizaciones LM'
 
 const mapFilePathToRoute = (string, path, route) => {
   return (

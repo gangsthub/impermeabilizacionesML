@@ -170,7 +170,14 @@ collections:
         fields:
           - widget: text
             name: subtitle
-            label: Texto Principal
+            label: Subtítulo
             required: true
             default: Somos un grupo de profesionales con más de 30 años de experiencia.
             hint: Aparece justo debajo del subtítulo
+          - widget: markdown
+            name: body
+            label: Texto principal
+            required: true
+            hint: 'Aparece nada mas entrar en la página de trabajos'
+            modes: ['rich_text']
+            buttons: ['bold', 'italic']
