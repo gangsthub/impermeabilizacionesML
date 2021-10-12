@@ -35,7 +35,14 @@
         tag="nav"
       >
         <v-toolbar-items class="hidden-xs-only w100p white">
-          <v-btn nuxt text to="/" active-class="transparent"> Logo </v-btn>
+          <v-btn nuxt text to="/" active-class="transparent">
+            <img
+              src="logobig.svg"
+              height="48"
+              alt="Home"
+              title="Ir al inicio"
+            />
+          </v-btn>
           <v-spacer></v-spacer>
           <v-spacer></v-spacer>
           <v-btn
@@ -44,6 +51,7 @@
             class="hidden-xs-only"
             text
             nuxt
+            exact
             :to="item.page"
           >
             {{ item.title }}

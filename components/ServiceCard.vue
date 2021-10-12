@@ -7,9 +7,20 @@
     }"
   >
     <nuxt-link v-if="!staticCard" :to="link">
-      <CardImage :src="service.thumbnail" />
+      <CardImage
+        :src="service.thumbnail"
+        height="500"
+        width="500"
+        :img-props="{ crop: 'fill' }"
+      />
     </nuxt-link>
-    <CardImage v-else :src="service.thumbnail" />
+    <CardImage
+      v-else
+      :src="service.thumbnail"
+      height="500"
+      width="500"
+      :img-props="{ crop: 'fill' }"
+    />
     <v-card-title class="px-6 primary--text">
       <h3 class="v-card__title pa-0 text-wrap break-normal">
         {{ service.title }}

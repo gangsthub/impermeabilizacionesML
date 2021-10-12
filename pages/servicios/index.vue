@@ -1,11 +1,6 @@
 <template>
   <div>
-    <JumboSecondary title="Servicios" :subtitle="subtitle" min-height="40vh">
-      <Container>
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <div class="text-left" v-html="body"></div>
-      </Container>
-    </JumboSecondary>
+    <JumboSecondary title="Servicios" :subtitle="subtitle" min-height="10vh" />
     <!-- -->
     <v-container>
       <v-row class="py-16 mt-10">

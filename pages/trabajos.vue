@@ -3,38 +3,30 @@
     <JumboSecondary
       title="Trabajos"
       subtitle="Últimos trabajos realizados"
-      min-height="30vh"
+      min-height="10vh"
     >
-      <Container>
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <p v-html="subtitle"></p>
-      </Container>
     </JumboSecondary>
     <Container>
-      <v-row justify="space-around">
-        <v-col v-for="(work, i) of works" :key="i" cols="12" xs="12">
-          <v-card flat>
-            <div class="d-flex flex-no-wrap justify-space-between">
-              <v-avatar class="ma-2" size="125" tile>
-                <v-img :src="work.thumbnail"></v-img>
-              </v-avatar>
-
-              <div class="flex">
-                <v-card-title class="pt-0 primary--text">
-                  <h3 class="headline">
-                    {{ work.title }}
-                  </h3>
-                </v-card-title>
-                <v-card-subtitle class="overline py-0 secondary--text">{{
-                  work.service
-                }}</v-card-subtitle>
-                <v-card-text>
-                  {{ work.seoDescription }}
-                </v-card-text>
-              </div>
-            </div>
-          </v-card>
-        </v-col>
+      <v-row
+        v-for="(work, i) of works"
+        :key="i"
+        justify="space-around"
+        class="flex-nowrap flex-column flex-md-row"
+      >
+        <div class="flex pa-3">
+          <v-avatar tile size="250">
+            <CardImage :src="work.thumbnail" width="250" height="250" />
+          </v-avatar>
+        </div>
+        <v-col cols="12" sm="9" lg="10" xs="12" class="pl-md-5">
+          <h3 class="text-h4 mb-2 primary--text">
+            {{ work.title }}
+          </h3>
+          <h4 class="overline py-0 secondary--text">{{ work.service }}</h4>
+          <p>
+            {{ work.seoDescription }}
+          </p></v-col
+        >
       </v-row>
     </Container>
   </div>

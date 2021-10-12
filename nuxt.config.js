@@ -2,6 +2,8 @@ import colors from 'vuetify/es5/util/colors'
 import glob from 'glob-all'
 
 const BRAND_NAME = 'Impermeabilizaciones LM'
+const BRAND_DESCRIPTION =
+  'Impermeabilizaciones en todo el área de Barcelona y parte de Tarragona'
 
 const mapFilePathToRoute = (string, path, route) => {
   return (
@@ -30,7 +32,8 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: `%s - ${BRAND_NAME}`,
-    title: `${BRAND_NAME}`,
+    title: BRAND_NAME,
+    description: BRAND_DESCRIPTION,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -73,7 +76,16 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en',
+      lang: 'es',
+      description: BRAND_DESCRIPTION,
+    },
+    meta: {
+      name: BRAND_NAME,
+      type: 'website',
+    },
+    icon: {
+      purpose: ['any'],
+      source: './static/icon.png',
     },
   },
 
