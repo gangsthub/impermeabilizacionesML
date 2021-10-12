@@ -51,6 +51,7 @@
             class="hidden-xs-only"
             text
             nuxt
+            exact
             :to="item.page"
           >
             {{ item.title }}
