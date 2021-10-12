@@ -9,7 +9,7 @@
       class="cld"
       alt=""
     >
-      <cld-transformation height="250" />
+      <cld-transformation :height="height" />
       <cld-placeholder type="blur" />
     </cld-image>
   </ClientOnly>

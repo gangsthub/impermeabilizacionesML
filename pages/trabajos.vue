@@ -11,8 +11,8 @@
         <v-col v-for="(work, i) of works" :key="i" cols="12" xs="12">
           <v-card flat>
             <div class="d-flex flex-no-wrap justify-space-between">
-              <v-avatar class="ma-2" size="500" tile>
-                <CardImage :src="work.thumbnail" height="500px" />
+              <v-avatar class="ma-2" size="300" tile>
+                <CardImage :src="work.thumbnail" height="300" />
               </v-avatar>
 
               <div class="flex">
