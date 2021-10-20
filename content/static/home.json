@@ -1,10 +1,12 @@
 {
   "zones": [
+    "Barcelonès",
     "Garraf",
     "Baix Llobregat",
     "Baix Penedès",
     "Alt Penedès",
     "Maresme",
-    "Alt Camp"
+    "Alt Camp",
+    "..."
   ]
 }
