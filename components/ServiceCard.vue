@@ -30,7 +30,6 @@
       class="px-6 grey--text text--darken-4 pb-0 mb-auto"
       :class="{
         'mb-6': staticCard,
-        'line-clamp-3': clamped,
       }"
       >{{ service.short_text }}</v-card-text
     >
@@ -58,11 +57,6 @@ export default {
     },
     staticCard: {
       // no links
-      type: Boolean,
-      default: false,
-    },
-    clamped: {
-      // clamp description to 3 lines
       type: Boolean,
       default: false,
     },

@@ -3,7 +3,7 @@
     <JumboSecondary class="text-left" :title="title" :subtitle="subtitle">
       <Container>
         <!-- eslint-disable-next-line vue/no-v-html -->
-        <p v-html="body || 'Texto'"></p>
+        <p class="texts px-5 px-sm-0" v-html="body || 'Texto'"></p>
       </Container>
     </JumboSecondary>
 

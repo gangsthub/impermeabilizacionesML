@@ -7,7 +7,7 @@
       scroll-threshold="100"
       hide-on-scroll
       clipped-left
-      prominent
+      :prominent="$vuetify.breakpoint.mdAndUp"
       flat
       color="white"
       class="header px-0"
@@ -31,10 +31,10 @@
       </v-toolbar>
       <v-toolbar
         flat
-        class="second-nav transparent flex-row w100p py-0 px-0"
+        class="second-nav transparent flex-row w100p py-0 px-0 hidden-xs-only"
         tag="nav"
       >
-        <v-toolbar-items class="hidden-xs-only w100p white">
+        <v-toolbar-items class="w100p white">
           <v-btn nuxt text to="/" active-class="transparent">
             <img
               src="logobig.svg"

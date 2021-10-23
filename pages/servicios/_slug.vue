@@ -1,15 +1,28 @@
 <template>
   <div>
-    <JumboSecondary
-      :title="service.title"
-      :bg-image="$cloudinary.image.url(service.thumbnail)"
-    >
+    <v-img :lazy-src="img" :src="img" max-height="500" class="reserve-500" />
+    <Container class="mt-n16 mx-auto white pt-12 relative z-1">
+      <h1
+        class="
+          font-weight-bold
+          text-md-h3 text-sm-h3 text-xs-h5
+          mb-4
+          px-5 px-sm-0
+        "
+      >
+        {{ service.title }}
+      </h1>
       <!-- eslint-disable vue/no-v-html -->
-      <div
-        class="text-left text-h5 text-pre-wrap mt-10"
-        v-html="service.long_text"
-      ></div>
-    </JumboSecondary>
+      <div class="texts mt-10 px-5 px-sm-0" v-html="service.long_text"></div>
+    </Container>
+    <Container class="mt-12">
+      <v-divider class="mb-8" />
+      <div class="text-center">
+        <PrimaryButton exact outlined to="/servicios" nuxt class="px-6 mx-auto"
+          >Volver a servicios</PrimaryButton
+        >
+      </div>
+    </Container>
   </div>
 </template>
 
@@ -45,5 +58,16 @@ export default {
       ],
     }
   },
+  computed: {
+    img() {
+      return this.$cloudinary.image.url(this.service.thumbnail)
+    },
+  },
 }
 </script>
+
+<style lang="scss" scoped>
+.reserve-500 {
+  min-height: 500px;
+}
+</style>

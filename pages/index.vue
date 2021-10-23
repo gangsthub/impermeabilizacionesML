@@ -9,7 +9,7 @@
     <!-- -->
     <div class="secondary white--text mb-16 overflow-hidden">
       <v-container class="py-12">
-        <h2 class="text-center font-bold mb-12 text-h3">
+        <h2 class="text-center font-bold mb-12 text-h4 text-sm-h3">
           Impermeabilización de terrazas y cubiertas
         </h2>
         <v-row class="mb-10">
@@ -25,7 +25,6 @@
               :key="service.title"
               :service="service"
               color="white"
-              clamped
             />
           </v-col>
         </v-row>
