@@ -23,7 +23,7 @@ export default {
     imgProps: {
       type: Object,
       default: () => ({
-        crop: 'crop',
+        crop: 'fill',
       }),
     },
   },
@@ -32,7 +32,6 @@ export default {
       return {
         ...(this.height && { height: this.height }),
         ...(this.width && { width: this.width }),
-        gravity: 'auto',
         ...this.imgProps,
       }
     },

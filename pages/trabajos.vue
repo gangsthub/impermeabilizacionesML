@@ -14,8 +14,8 @@
         class="flex-nowrap flex-column flex-md-row"
       >
         <div class="flex pa-3">
-          <v-avatar tile size="400">
-            <CardImage :src="work.thumbnail" width="400" height="400" />
+          <v-avatar tile size="300">
+            <CardImage :src="work.thumbnail" width="300" height="300" />
           </v-avatar>
         </div>
         <v-col cols="12" sm="9" lg="10" xs="12" class="pl-md-5">
