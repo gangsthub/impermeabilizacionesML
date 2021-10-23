@@ -4,6 +4,7 @@ import glob from 'glob-all'
 const BRAND_NAME = 'Impermeabilizaciones LM'
 const BRAND_DESCRIPTION =
   'Impermeabilizaciones en todo el área de Barcelona y parte de Tarragona'
+const BRAND_URL = 'https://impermeabilizacionesLM.com'
 
 const mapFilePathToRoute = (string, path, route) => {
   return (
@@ -31,7 +32,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: `%s - ${BRAND_NAME}`,
+    titleTemplate: `%s - ${BRAND_NAME} - Expertos en impermeabilización de cubiertas y terrazas.`,
     title: BRAND_NAME,
     description: BRAND_DESCRIPTION,
     meta: [
@@ -70,22 +71,13 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/cloudinary',
+    '@nuxtjs/sitemap',
   ],
 
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'es',
-      description: BRAND_DESCRIPTION,
-    },
-    meta: {
-      name: BRAND_NAME,
-      type: 'website',
-    },
-    icon: {
-      purpose: ['any'],
-      source: './static/icon.png',
-    },
+  sitemap: {
+    hostname: BRAND_URL,
+    gzip: true,
+    exclude: ['/gracias'],
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
