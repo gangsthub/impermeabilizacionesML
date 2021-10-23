@@ -32,7 +32,7 @@ export default {
       return {
         ...(this.height && { height: this.height }),
         ...(this.width && { width: this.width }),
-        gravity: 'auto:subject',
+        gravity: 'auto',
         ...this.imgProps,
       }
     },
