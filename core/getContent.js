@@ -31,3 +31,9 @@ export const getMoreServices = () => {
   const services = getServicesFromContext(context)
   return services
 }
+
+export const getWorks = () => {
+  const context = require.context('~/content/blog/posts', false, /\.json$/)
+  const works = context.keys().map(context)
+  return works
+}
