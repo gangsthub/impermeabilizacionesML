@@ -32,13 +32,7 @@
 
 <script>
 import worksTexts from '~/content/static/works.json'
-
-// gets all the json files in the posts folder
-const getWorks = () => {
-  const context = require.context('~/content/blog/posts', false, /\.json$/)
-  const works = context.keys().map(context)
-  return works
-}
+import { getWorks } from '~/core/getContent'
 
 export default {
   name: 'Trabajos',
@@ -51,7 +45,9 @@ export default {
   },
   created() {
     // eslint-disable-next-line no-console
-    this.works = getWorks()
+    this.works = Array.from(getWorks()).sort((a, b) => {
+      return new Date(b.date) - new Date(a.date)
+    })
     this.subtitle = worksTexts.body
   },
 }
