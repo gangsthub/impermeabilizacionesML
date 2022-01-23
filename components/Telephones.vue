@@ -6,28 +6,17 @@
       'vertical flex-column': direction === 'vertical',
     }"
   >
-    <span>
+    <span v-for="(tel, index) of telephones" :key="tel">
       <v-btn
         v-bind="buttonProps"
         :small="$vuetify.breakpoint.smAndDown"
-        href="tel:+34 605 94 01 67"
+        :href="`tel:+34 ${tel}`"
         class="py-2 px-4"
         :class="{
-          'mb-5': direction === 'vertical',
+          'mb-5': direction === 'vertical' && index !== telephones.length - 1,
+          'ml-3': direction === 'horizontal' && index !== 0,
         }"
-        ><v-icon class="mr-2">mdi-phone</v-icon> 605 94 01 67</v-btn
-      ></span
-    >
-    <span>
-      <v-btn
-        v-bind="buttonProps"
-        :small="$vuetify.breakpoint.smAndDown"
-        href="tel:+34 605 94 05 15"
-        class="py-2 px-4"
-        :class="{
-          'ml-3': direction === 'horizontal',
-        }"
-        ><v-icon class="mr-2">mdi-phone</v-icon> 605 94 05 15</v-btn
+        ><v-icon class="mr-2">mdi-phone</v-icon> {{ tel }}</v-btn
       ></span
     >
   </div>
@@ -48,6 +37,11 @@ export default {
         color: 'info',
       }),
     },
+  },
+  data() {
+    return {
+      telephones: ['605 78 42 14', '605 94 01 67'],
+    }
   },
 }
 </script>
