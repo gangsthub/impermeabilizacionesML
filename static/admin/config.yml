@@ -48,6 +48,7 @@ collections:
             'Pruebas de estanqueidad',
             'Sellados',
             'Condensaciones',
+            'Barreras de Vapor',
           ]
       - label: 'Descripción'
         name: 'seoDescription'
