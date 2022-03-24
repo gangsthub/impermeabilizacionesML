@@ -22,7 +22,10 @@
           <h3 class="text-h4 mb-2 primary--text">
             {{ work.title }}
           </h3>
-          <h4 class="overline py-0 secondary--text mb-5">{{ work.service }}</h4>
+          <h4 class="overline py-0 secondary--text mb-5">
+            {{ work.service
+            }}<span v-if="work.place">&nbsp;- {{ work.place }}</span>
+          </h4>
           <p class="texts">{{ work.seoDescription }}</p></v-col
         >
       </v-row>
