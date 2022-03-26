@@ -19,6 +19,10 @@
   height: 100%;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .cld {
   width: 100%;
   object-fit: cover;
@@ -40,7 +44,7 @@
   line-height: 2rem;
   letter-spacing: normal !important;
   font-family: 'Roboto', sans-serif !important;
-  white-space: pre-wrap !important;
+  white-space: pre-line !important;
   @media #{map-get($display-breakpoints, 'md-and-down')} {
     hyphens: auto;
   }

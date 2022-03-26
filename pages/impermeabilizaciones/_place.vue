@@ -1,14 +1,14 @@
 <template>
   <div>
     <JumboSecondary
-      title="Trabajos"
-      subtitle="Últimos trabajos realizados"
+      :title="worksByPlace[0].place"
+      :subtitle="'Impermeabilizaciones en ' + worksByPlace[0].place"
       min-height="10vh"
     >
     </JumboSecondary>
-    <Container>
+    <Container class="pb-16 md:px-5">
       <v-row
-        v-for="(work, i) of works"
+        v-for="(work, i) of worksByPlace"
         :key="i"
         justify="space-around"
         class="flex-nowrap flex-column flex-md-row"
@@ -23,8 +23,7 @@
             {{ work.title }}
           </h3>
           <h4 class="overline py-0 secondary--text mb-5">
-            {{ work.service
-            }}<span v-if="work.place">&nbsp;- {{ work.place }}</span>
+            {{ work.service }}
           </h4>
           <p class="texts">{{ work.seoDescription }}</p></v-col
         >
@@ -34,24 +33,29 @@
 </template>
 
 <script>
-import worksTexts from '~/content/static/works.json'
 import { getWorks } from '~/core/getContent'
+import { slugify } from '~/core/slugify'
 
 export default {
-  name: 'Trabajos',
+  name: 'TrabajosEn',
   layout: 'default',
+  asyncData({ params: { place } }) {
+    return { place }
+  },
   data() {
     return {
-      works: [],
+      worksByPlace: [],
       subtitle: '',
     }
   },
   created() {
-    // eslint-disable-next-line no-console
-    this.works = Array.from(getWorks()).sort((a, b) => {
-      return new Date(b.date) - new Date(a.date)
-    })
-    this.subtitle = worksTexts.body
+    this.worksByPlace = Array.from(getWorks())
+      .sort((a, b) => {
+        return new Date(b.date) - new Date(a.date)
+      })
+      .filter((work) => {
+        return slugify(work.place) === this.place
+      })
   },
 }
 </script>
