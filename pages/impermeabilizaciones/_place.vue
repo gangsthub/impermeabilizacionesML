@@ -48,6 +48,18 @@ export default {
       subtitle: '',
     }
   },
+  head() {
+    return {
+      title: `Impermeabilizaciones en ${this.place}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Últimos trabajos realizados en ${this.place}. Impermeabilizaciones, cubiertas, pisos, paredes, techos, entre otros.`,
+        },
+      ],
+    }
+  },
   created() {
     this.worksByPlace = Array.from(getWorks())
       .sort((a, b) => {
