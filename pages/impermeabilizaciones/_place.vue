@@ -51,12 +51,12 @@ export default {
   },
   head() {
     return {
-      title: `Impermeabilizaciones en ${palceTitle}`,
+      title: `Impermeabilizaciones en ${this.palceTitle}`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: `Últimos trabajos realizados en ${palceTitle}. Impermeabilizaciones, cubiertas, pisos, paredes, techos, entre otros.`,
+          content: `Últimos trabajos realizados en ${this.palceTitle}. Impermeabilizaciones, cubiertas, pisos, paredes, techos, entre otros.`,
         },
       ],
     }
