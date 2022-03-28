@@ -37,7 +37,7 @@
         <v-toolbar-items class="w100p white">
           <v-btn nuxt text to="/" active-class="transparent">
             <img
-              src="logobig.svg"
+              src="/logobig.svg"
               height="48"
               alt="Home"
               title="Ir al inicio"

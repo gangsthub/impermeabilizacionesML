@@ -42,7 +42,7 @@
       <v-card tile flat color="transparent" class="text-center w100p">
         <v-card-text class="white--text text-center py-0 mb-8">
           <div aria-hidden="true">
-            <img src="logobig.svg" height="80" class="footer-logo" />
+            <img src="/logobig.svg" height="80" class="footer-logo" />
           </div>
           <div>
             {{ new Date().getFullYear() }} -
