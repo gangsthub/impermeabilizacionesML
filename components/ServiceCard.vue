@@ -57,9 +57,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.cld {
-  height: 250px;
-}
-</style>
