@@ -38,7 +38,7 @@
             >
               {{ subtitle }}
             </h2>
-            <div class="text-left px-5 w100p"><slot /></div>
+            <div class="text-left px-5 w100p pt-16"><slot /></div>
           </v-sheet>
         </v-col>
       </v-row>

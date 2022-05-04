@@ -3,7 +3,7 @@
     <JumboSecondary title="Servicios" :subtitle="subtitle" min-height="10vh" />
     <!-- -->
     <v-container>
-      <v-row class="py-16 mt-10">
+      <v-row>
         <v-col
           v-for="service in services"
           :key="service.title"
