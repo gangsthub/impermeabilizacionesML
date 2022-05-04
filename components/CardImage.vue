@@ -1,47 +1,13 @@
 <template>
-  <ClientOnly>
-    <img loading="lazy" v-bind="$attrs" class="cld" :src="srcComputed" />
-  </ClientOnly>
+  <nuxt-img loading="lazy" v-bind="$attrs" class="cld" :src="src" />
 </template>
 
 <script>
 export default {
-  inheritAttrs: false,
   props: {
     src: {
       type: String,
       default: '',
-    },
-    height: {
-      type: [String, Number],
-      default: '',
-    },
-    width: {
-      type: [String, Number],
-      default: '',
-    },
-    imgProps: {
-      type: Object,
-      default: () => ({
-        crop: 'fill',
-      }),
-    },
-  },
-  computed: {
-    options() {
-      return {
-        ...(this.height && { height: this.height }),
-        ...(this.width && { width: this.width }),
-        ...this.imgProps,
-      }
-    },
-    srcComputed() {
-      return this.fetchRemote(this.src, this.options)
-    },
-  },
-  methods: {
-    fetchRemote(url, options = {}) {
-      return this.$cloudinary.image.fetchRemote(url, options)
     },
   },
 }

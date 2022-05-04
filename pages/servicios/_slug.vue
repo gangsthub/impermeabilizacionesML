@@ -1,6 +1,11 @@
 <template>
   <div>
-    <v-img :lazy-src="img" :src="img" max-height="500" class="reserve-500" />
+    <v-img
+      :lazy-src="$img(service.thumbnail, { width: 10, quality: 70 })"
+      :src="$img(service.thumbnail)"
+      max-height="500"
+      class="reserve-500"
+    />
     <Container class="mt-n16 mx-auto white pt-12 relative z-1">
       <h1
         class="
@@ -57,11 +62,6 @@ export default {
         },
       ],
     }
-  },
-  computed: {
-    img() {
-      return this.$cloudinary.image.url(this.service.thumbnail)
-    },
   },
 }
 </script>

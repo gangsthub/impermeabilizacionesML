@@ -1,4 +1,7 @@
 {
+  "plugins": [
+    ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+  ],
   "env": {
     "test": {
       "presets": [

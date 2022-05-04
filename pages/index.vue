@@ -6,28 +6,6 @@
       <Warantee direction="horizontal" :fill="false" />
     </Container>
 
-    <!--  -->
-    <!-- <v-container class="py-16 mb-16">
-      <v-row>
-        <v-col cols="12">
-          <v-card class="elevation-0" dark>
-            <div class="d-flex flex-no-wrap justify-space-between">
-              <div>
-                <v-card-title>
-                <h2 class="text-center font-bold mb-12 text-h4 text-sm-h3">
-                  Cubiertas Ecológicas
-                </h2>
-              </v-card-title>
-              </div>
-              <v-card-avatar>
-                <img src="" alt="">
-              </v-card-avatar>
-            </div>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container> -->
-
     <!-- -->
     <div class="secondary white--text mb-16 overflow-hidden">
       <v-container class="py-12">
