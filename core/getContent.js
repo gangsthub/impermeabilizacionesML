@@ -64,21 +64,22 @@ export const getServicesStatic = () =>
     )
     .map((f) => mapFilePathToRoute(f, './content/static/services', 'servicios'))
 
-const getPlaces = () => {
+const getFieldCollection = (globSource, key) => {
   const files = glob
-    .sync(['./content/blog/posts/**'])
+    .sync([globSource])
     .filter((f) => String(f).endsWith('.json'))
 
-  const places = new Set()
+  const collection = new Set()
 
   for (let i = 0; i < files.length; i++) {
     const file = files[i]
     const data = require('.' + file)
-    const place = data.place
-    places.add(place)
+    const place = data[key]
+    collection.add(place)
   }
-  return Array.from(places)
+  return Array.from(collection)
 }
+const getPlaces = () => getFieldCollection('./content/blog/posts/**', 'place')
 
 export const getPlacesStatic = () => {
   return getPlaces().map((p) => `/impermeabilizaciones/${slugify(p)}`)

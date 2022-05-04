@@ -1,5 +1,5 @@
 <template>
-  <div class="jumbo-image">
+  <div class="jumbo-image" :style="{ '--bg-image': bgImageResolved }">
     <v-container class="overflow-hidden">
       <v-row no-gutters tag="section" class="min-h">
         <v-sheet
@@ -38,6 +38,17 @@
   </div>
 </template>
 
+<script>
+export default {
+  computed: {
+    bgImageResolved() {
+      const imgUrl = this.$img('/images/img3.jpg')
+      return `url('${imgUrl}')`
+    },
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .min-h {
   height: 60vh;
@@ -59,7 +70,7 @@
   }
   &:before {
     background-color: #fff;
-    background-image: url('~assets/img/img3.jpg');
+    background-image: var(--bg-image);
     background-size: cover;
     background-position: 150px 40%;
     background-attachment: fixed;

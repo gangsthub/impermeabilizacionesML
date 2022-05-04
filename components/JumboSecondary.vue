@@ -69,7 +69,8 @@ export default {
   },
   computed: {
     bgImageResolved() {
-      return `url('${this.bgImage}')`
+      const imgUrl = this.$img(this.bgImage)
+      return `url('${imgUrl}')`
     },
   },
 }

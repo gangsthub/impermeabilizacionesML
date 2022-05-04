@@ -41,6 +41,8 @@ export default {
     '@nuxtjs/vuetify',
     // https://github.com/nuxt-community/style-resources-module
     '@nuxtjs/style-resources',
+    // https://image.nuxtjs.org/
+    '@nuxt/image',
   ],
 
   styleResources: {
@@ -50,7 +52,6 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/cloudinary',
     '@nuxtjs/sitemap',
   ],
 
@@ -78,13 +79,6 @@ export default {
       },
     },
   },
-  cloudinary: {
-    // Cloudinary configuration options
-    cloudName: process.env.CLOUDINARY_CLOUDNAME,
-    apiKey: process.env.CLOUDINARY_API_KEY,
-    apiSecret: process.env.CLOUDINARY_API_SECRET,
-    useComponent: true, // use Vue components
-  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -92,6 +86,9 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
+      config.node = {
+        fs: 'empty',
+      }
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
