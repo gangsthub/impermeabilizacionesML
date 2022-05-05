@@ -14,7 +14,7 @@
         >
           <div class="flex pa-3">
             <v-avatar tile size="300">
-              <CardImage :src="work.thumbnail" width="300" height="300" />
+              <CardsCardImage :src="work.thumbnail" width="300" height="300" />
             </v-avatar>
           </div>
           <v-col cols="12" sm="9" lg="10" xs="12" class="pl-md-5">

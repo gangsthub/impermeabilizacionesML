@@ -10,7 +10,7 @@
     <Container>
       <WorksCard v-for="(work, i) of works" :key="i">
         <template #image>
-          <CardImage :src="work.thumbnail" width="300" height="300" />
+          <CardsCardImage :src="work.thumbnail" width="300" height="300" />
         </template>
         <template #title>
           {{ work.title }}

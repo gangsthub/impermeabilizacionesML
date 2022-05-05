@@ -21,7 +21,7 @@
             md="4"
             class="mb-10"
           >
-            <ServiceCard
+            <CardsServiceCard
               :key="service.title"
               :service="service"
               color="white"
@@ -41,7 +41,7 @@
           sm="6"
           md="4"
         >
-          <ServiceCard class="mb-10" :service="service" static-card />
+          <CardsServiceCard class="mb-10" :service="service" static-card />
         </v-col>
       </v-row>
     </v-container>

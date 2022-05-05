@@ -3,13 +3,9 @@ import { slugify } from './slugify'
 
 const cleanSlug = (string) => string.replace(/(^\.\/|\.json$)/gi, '')
 
-// Webpack way: used in Vue pages
+// Webpack way: used in Vue pages, to fetch the content
+// and pass it to the list and detail components
 // ****************************************************************************************
-export const getServices = () => {
-  const context = require.context(`~/content/static/services`, false, /\.json$/)
-  const services = getServicesFromContext(context)
-  return services
-}
 
 const getServicesFromContext = (context) => {
   return context
@@ -28,15 +24,16 @@ const getServicesFromContext = (context) => {
     }, [])
 }
 
-export const getMoreServices = () => {
-  const context = require.context(
-    `~/content/static/more_services`,
-    false,
-    /\.json$/
-  )
+export const getServicesShared = (path) => {
+  const context = require.context(`~/content/static/services`, false, /\.json$/)
   const services = getServicesFromContext(context)
   return services
 }
+
+export const getServices = () => getServicesShared(`~/content/static/services`)
+
+export const getMoreServices = () =>
+  getServicesShared(`~/content/static/more_services`)
 
 export const getWorks = () => {
   const context = require.context('~/content/blog/posts', false, /\.json$/)
@@ -53,7 +50,7 @@ const mapFilePathToRoute = (string, path, route) => {
   )
 }
 
-// FS way: used only in the Nuxt config
+// FS way: used only in the Nuxt config, to generate pages
 // ****************************************************************************************
 export const getServicesStatic = () =>
   glob

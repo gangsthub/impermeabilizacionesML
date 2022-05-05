@@ -4,6 +4,11 @@
     <!-- -->
     <v-container>
       <v-row>
+        <v-col>
+          <CardsEcoCard flat class="mb-10" />
+        </v-col>
+      </v-row>
+      <v-row>
         <v-col
           v-for="service in services"
           :key="service.title"
@@ -11,13 +16,13 @@
           sm="6"
           md="4"
         >
-          <ServiceCard :service="service" flat class="mb-10" />
+          <CardsServiceCard :service="service" flat class="mb-10" />
         </v-col>
       </v-row>
     </v-container>
     <v-container>
-      <h3 class="text-h4 text-center font-bold mb-12">Más Servicios</h3>
-      <v-row class="py-16 mt-10">
+      <h3 class="text-h4 text-center font-bold mt-12 mb-6">Más Servicios</h3>
+      <v-row class="pt-6 pb-16 mt-10">
         <v-col
           v-for="service in moreServices"
           :key="service.title"
@@ -25,7 +30,7 @@
           sm="6"
           md="4"
         >
-          <ServiceCard :service="service" flat static-card class="mb-10" />
+          <CardsServiceCard :service="service" flat static-card class="mb-10" />
         </v-col>
       </v-row>
     </v-container>
