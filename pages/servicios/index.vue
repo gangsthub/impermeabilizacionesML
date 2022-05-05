@@ -4,8 +4,8 @@
     <!-- -->
     <v-container>
       <v-row>
-        <v-col>
-          <CardsEcoCard flat class="mb-10" />
+        <v-col v-for="service in ecoServices" :key="service.title">
+          <CardsEcoCard :service="service" flat class="mb-10" />
         </v-col>
       </v-row>
       <v-row>
@@ -39,7 +39,7 @@
 
 <script>
 import servicesTexts from '~/content/static/services/page_texts.json'
-import { getServices, getMoreServices } from '~/core/getContent'
+import { getServices, getMoreServices, getEcoServices } from '~/core/getContent'
 
 export default {
   name: 'Servicios',
@@ -48,6 +48,7 @@ export default {
     return {
       services: getServices(),
       moreServices: getMoreServices(),
+      ecoServices: getEcoServices(),
       body: servicesTexts.body,
       subtitle: servicesTexts.subtitle,
     }

@@ -111,7 +111,7 @@ collections:
     create: true
     editor:
       preview: false
-    folder: 'content/static/eco_services'
+    folder: 'content/static/ecoServices'
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     preview_path: 'servicios/{{slug}}'
     format: 'json'

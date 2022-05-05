@@ -1,14 +1,36 @@
 <template>
-  <v-card class="rounded-lg d-flex justify-space-between" nuxt :to="link">
+  <v-card
+    class="rounded-lg d-flex flex-column flex-sm-row justify-space-between"
+    nuxt
+    :to="{ path: link, query: { eco: true } }"
+  >
     <CardsCardImage
       v-if="service.thumbnail"
       :src="service.thumbnail"
       height="500"
       width="500"
     />
-    <div>
-      <v-card-title class="primary--text">{{ service.title }}</v-card-title>
-      <v-card-text class="grey--text text--darken-4">{{
+    <div class="d-flex flex-column justify-center">
+      <v-card-title class="primary--text">
+        <p
+          class="
+            overline
+            green--text
+            text--darken-3
+            font-weight-bold
+            mb-3
+            text-wrap
+            break-normal
+          "
+        >
+          <v-icon class="pr-2" color="green darken-3">mdi-recycle</v-icon>
+          <span>Sistema Sostenible con el Medio Ambiente</span>
+        </p>
+        <h3 class="v-card__title pa-0 text-wrap break-normal">
+          {{ service.title }}
+        </h3>
+      </v-card-title>
+      <v-card-text class="grey--text text--darken-4 mb-6">{{
         service.short_text
       }}</v-card-text>
     </div>

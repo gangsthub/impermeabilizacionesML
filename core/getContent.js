@@ -24,16 +24,31 @@ const getServicesFromContext = (context) => {
     }, [])
 }
 
-export const getServicesShared = (path) => {
+export const getServices = () => {
   const context = require.context(`~/content/static/services`, false, /\.json$/)
   const services = getServicesFromContext(context)
   return services
 }
 
-export const getServices = () => getServicesShared(`~/content/static/services`)
+export const getMoreServices = () => {
+  const context = require.context(
+    `~/content/static/more_services`,
+    false,
+    /\.json$/
+  )
+  const services = getServicesFromContext(context)
+  return services
+}
 
-export const getMoreServices = () =>
-  getServicesShared(`~/content/static/more_services`)
+export const getEcoServices = () => {
+  const context = require.context(
+    `~/content/static/ecoServices`,
+    false,
+    /\.json$/
+  )
+  const services = getServicesFromContext(context)
+  return services
+}
 
 export const getWorks = () => {
   const context = require.context('~/content/blog/posts', false, /\.json$/)
