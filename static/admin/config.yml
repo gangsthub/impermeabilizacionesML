@@ -111,7 +111,7 @@ collections:
     create: true
     editor:
       preview: false
-    folder: 'content/static/ecoServices'
+    folder: 'content/static/eco_services'
     slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     preview_path: 'servicios/{{slug}}'
     format: 'json'
@@ -121,8 +121,13 @@ collections:
         widget: 'string'
         required: true
 
-      - label: 'Imagen del servicio'
-        name: 'thumbnail'
+      - label: 'Imagen 1'
+        name: 'thumbnail1'
+        widget: 'image'
+        required: true
+
+      - label: 'Imagen 2'
+        name: 'thumbnail2'
         widget: 'image'
         required: true
 

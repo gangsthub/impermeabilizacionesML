@@ -49,7 +49,7 @@ export default {
     let service
     try {
       service = await import(
-        `~/content/static/${query.eco ? 'ecoServices' : 'services'}/${
+        `~/content/static/${query.eco ? 'eco_services' : 'services'}/${
           params.slug
         }.json`
       ).then((m) => m.default)

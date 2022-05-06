@@ -42,7 +42,7 @@ export const getMoreServices = () => {
 
 export const getEcoServices = () => {
   const context = require.context(
-    `~/content/static/ecoServices`,
+    `~/content/static/eco_services`,
     false,
     /\.json$/
   )
