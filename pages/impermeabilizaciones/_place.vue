@@ -1,8 +1,7 @@
 <template>
   <div>
     <JumboSecondary
-      :title="palceTitle"
-      :subtitle="'Impermeabilizaciones en ' + palceTitle"
+      :title="'Impermeabilizaciones en ' + palceTitle"
       min-height="10vh"
     >
     </JumboSecondary>
@@ -14,7 +13,7 @@
         >
           <div class="flex pa-3">
             <v-avatar tile size="300">
-              <CardImage :src="work.thumbnail" width="300" height="300" />
+              <CardsCardImage :src="work.thumbnail" width="300" height="300" />
             </v-avatar>
           </div>
           <v-col cols="12" sm="9" lg="10" xs="12" class="pl-md-5">
@@ -28,6 +27,14 @@
           >
         </v-row>
         <v-divider v-if="i !== worksByPlace.length - 1" dark></v-divider>
+      </div>
+    </Container>
+    <Container class="mt-12">
+      <v-divider class="mb-8" />
+      <div class="text-center">
+        <PrimaryButton exact outlined to="/trabajos" nuxt class="px-6 mx-auto"
+          >Ver más trabajos</PrimaryButton
+        >
       </div>
     </Container>
   </div>

@@ -12,6 +12,11 @@
         <h2 class="text-center font-bold mb-12 text-h4 text-sm-h3">
           Impermeabilización de terrazas y cubiertas
         </h2>
+        <v-row>
+          <v-col v-for="service in ecoServices" :key="service.title">
+            <CardsEcoCard :service="service" flat class="mb-10" />
+          </v-col>
+        </v-row>
         <v-row class="mb-10">
           <v-col
             v-for="service of services"
@@ -21,7 +26,7 @@
             md="4"
             class="mb-10"
           >
-            <ServiceCard
+            <CardsServiceCard
               :key="service.title"
               :service="service"
               color="white"
@@ -41,7 +46,7 @@
           sm="6"
           md="4"
         >
-          <ServiceCard class="mb-10" :service="service" static-card />
+          <CardsServiceCard class="mb-10" :service="service" static-card />
         </v-col>
       </v-row>
     </v-container>
@@ -51,7 +56,7 @@
 </template>
 
 <script>
-import { getMoreServices, getServices } from '~/core/getContent'
+import { getMoreServices, getServices, getEcoServices } from '~/core/getContent'
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -106,18 +111,10 @@ const structuredData = {
 
 export default {
   asyncData() {
-    const services = getServices()
-    const moreServices = getMoreServices()
-
     return {
-      services,
-      moreServices,
-    }
-  },
-  data() {
-    return {
-      services: [],
-      moreServices: [],
+      services: getServices(),
+      ecoServices: getEcoServices(),
+      moreServices: getMoreServices(),
     }
   },
   head() {
