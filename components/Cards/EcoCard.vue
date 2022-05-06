@@ -5,8 +5,8 @@
     :to="link"
   >
     <CardsCardImage
-      v-if="service.thumbnail"
-      :src="service.thumbnail"
+      v-if="service.thumbnail1"
+      :src="service.thumbnail1"
       height="500"
       width="500"
     />
@@ -35,7 +35,9 @@
       }}</v-card-text>
       <v-card-actions class="mt-4 mb-6">
         <ClientOnly>
-          <PrimaryButton outlined class="px-6">Leer más</PrimaryButton>
+          <PrimaryButton outlined class="px-6" @click.prevent
+            >Leer más</PrimaryButton
+          >
         </ClientOnly>
       </v-card-actions>
     </div>

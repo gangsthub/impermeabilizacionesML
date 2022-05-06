@@ -42,7 +42,14 @@ export default {
     // https://github.com/nuxt-community/style-resources-module
     '@nuxtjs/style-resources',
     // https://image.nuxtjs.org/
-    '@nuxt/image',
+    [
+      '@nuxt/image',
+      {
+        sharp: {
+          withMetadata: true,
+        },
+      },
+    ],
   ],
 
   styleResources: {
