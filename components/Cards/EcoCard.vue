@@ -7,10 +7,10 @@
     <CardsCardImage
       v-if="service.thumbnail1"
       :src="service.thumbnail1"
-      height="500"
-      width="500"
+      height="400"
+      width="250"
     />
-    <div class="d-flex flex-column justify-center px-6">
+    <div class="d-flex flex-column justify-center pa-6">
       <v-card-title class="primary--text flex-column align-start">
         <p
           class="
@@ -30,10 +30,10 @@
           {{ service.title }}
         </h3>
       </v-card-title>
-      <v-card-text class="grey--text text--darken-4 mb-6">{{
+      <v-card-text class="grey--text text--darken-4">{{
         service.short_text
       }}</v-card-text>
-      <v-card-actions class="mt-4 mb-6">
+      <v-card-actions class="">
         <ClientOnly>
           <PrimaryButton outlined class="px-6" @click.prevent
             >Leer más</PrimaryButton
@@ -41,6 +41,13 @@
         </ClientOnly>
       </v-card-actions>
     </div>
+    <CardsCardImage
+      v-if="service.thumbnail2"
+      class="hide-on-small-screen rounded-0"
+      :src="service.thumbnail2"
+      height="400"
+      width="250"
+    />
   </v-card>
 </template>
 
@@ -67,3 +74,11 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+@media (max-width: 960px) {
+  .hide-on-small-screen {
+    display: none;
+  }
+}
+</style>

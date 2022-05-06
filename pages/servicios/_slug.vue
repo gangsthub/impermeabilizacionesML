@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-img
-      :lazy-src="$img(service.thumbnail, { width: 10, quality: 70 })"
-      :src="$img(service.thumbnail)"
+      :lazy-src="$img(image, { width: 10, quality: 70 })"
+      :src="$img(image)"
       max-height="500"
       class="reserve-500"
     />
@@ -79,6 +79,11 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    image() {
+      return this.isEco ? this.service.thumbnail1 : this.service.thumbnail
+    },
   },
 }
 </script>
