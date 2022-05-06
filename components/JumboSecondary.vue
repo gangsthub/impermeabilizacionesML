@@ -20,7 +20,7 @@
                 font-weight-bold
                 text-md-h2 text-sm-h3 text-xs-h5
                 mb-3
-                px-5
+                text-center
               "
             >
               {{ title }}

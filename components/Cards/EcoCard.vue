@@ -2,7 +2,7 @@
   <v-card
     class="rounded-lg d-flex flex-column flex-sm-row justify-space-between"
     nuxt
-    :to="{ path: link, query: { eco: true } }"
+    :to="link"
   >
     <CardsCardImage
       v-if="service.thumbnail"
@@ -10,8 +10,8 @@
       height="500"
       width="500"
     />
-    <div class="d-flex flex-column justify-center">
-      <v-card-title class="primary--text">
+    <div class="d-flex flex-column justify-center px-6">
+      <v-card-title class="primary--text flex-column align-start">
         <p
           class="
             overline
@@ -33,6 +33,11 @@
       <v-card-text class="grey--text text--darken-4 mb-6">{{
         service.short_text
       }}</v-card-text>
+      <v-card-actions class="mt-4 mb-6">
+        <ClientOnly>
+          <PrimaryButton outlined class="px-6">Leer más</PrimaryButton>
+        </ClientOnly>
+      </v-card-actions>
     </div>
   </v-card>
 </template>
@@ -55,7 +60,7 @@ export default {
   },
   computed: {
     link() {
-      return '/servicios/' + this.service.slug
+      return { path: '/servicios/' + this.service.slug, query: { eco: true } }
     },
   },
 }

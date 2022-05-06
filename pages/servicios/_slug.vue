@@ -44,6 +44,7 @@ import snarkdown from 'snarkdown'
 export default {
   name: 'ServiciosDynamic',
   layout: 'default',
+  scrollToTop: true,
   async asyncData({ params, query, error }) {
     let service
     try {
@@ -85,5 +86,9 @@ export default {
 <style lang="scss" scoped>
 .reserve-500 {
   min-height: 500px;
+}
+::v-deep :where(h2, h3, h4, h5, h6) {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 </style>
