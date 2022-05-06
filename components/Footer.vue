@@ -20,10 +20,10 @@
           </v-col>
           <v-col cols="12" sm="12" md="6">
             <v-card tile flat color="transparent" class="text-center w100p">
-              <v-card-text class="white--text pt-0 text-center">
+              <v-card-text class="white--text py-0 text-center">
                 <p class="text-h5 text-center pt-10">Teléfonos</p>
                 <Telephones
-                  class="justify-center pb-10"
+                  class="justify-center"
                   :button-props="{
                     text: true,
                     color: 'white',
@@ -31,6 +31,30 @@
                   }"
                   direction="vertical"
                 />
+              </v-card-text>
+            </v-card>
+            <v-card
+              tile
+              flat
+              color="transparent"
+              class="text-center w100p mt-2 mb-14 mb-sm-8"
+            >
+              <v-card-text class="white--text pt-0 text-center">
+                <p class="text-h5 text-center pt-10">Redes Sociales</p>
+                <ul class="list-reset pl-0">
+                  <li>
+                    <v-btn
+                      depressed
+                      text
+                      color="white"
+                      href="https://www.instagram.com/impermeabilizaciones_lm/"
+                      target="_blank"
+                      class="text-capitalize"
+                      ><v-icon class="mr-2">mdi-instagram</v-icon>
+                      Instagram</v-btn
+                    >
+                  </li>
+                </ul>
               </v-card-text>
             </v-card>
           </v-col>

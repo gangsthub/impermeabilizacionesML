@@ -5,12 +5,26 @@
       subtitle="Pídenos presupuesto sin compromiso. Llámanos para resolver tus dudas."
     >
       <div class="text-center">
-        <h3 class="mb-8">Teléfonos y WhatsApp</h3>
+        <h3 class="mb-6">Teléfonos y WhatsApp</h3>
         <Telephones
           direction="vertical"
           :button-props="{ color: 'info', large: true }"
         />
       </div>
+
+      <Container class="text-center mt-10">
+        <h3 class="mb-6">Redes Sociales</h3>
+        <ul class="list-reset pl-0">
+          <li>
+            <v-btn
+              color="secondary"
+              href="https://www.instagram.com/impermeabilizaciones_lm/"
+              target="_blank"
+              ><v-icon dark class="mr-2">mdi-instagram</v-icon> Instagram</v-btn
+            >
+          </li>
+        </ul>
+      </Container>
     </JumboSecondary>
 
     <Container class="pb-16 mb-16">
