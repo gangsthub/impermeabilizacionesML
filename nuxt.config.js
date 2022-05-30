@@ -1,4 +1,6 @@
+import path from 'path'
 import colors from 'vuetify/es5/util/colors'
+
 import { BRAND_DESCRIPTION, BRAND_NAME, BRAND_URL } from './config/brand'
 import { getServicesStatic, getPlacesStatic } from './core/getContent'
 
@@ -65,7 +67,7 @@ export default {
   sitemap: {
     hostname: BRAND_URL,
     gzip: true,
-    exclude: ['/gracias'],
+    exclude: ['/gracias', '/tutorial'],
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -105,6 +107,16 @@ export default {
           exclude: /(node_modules)/,
         })
       }
+
+      // import md files
+      config.module.rules.push({
+        test: /.md$/,
+        use: [
+          {
+            loader: path.resolve(__dirname, './core/md-loader.js'),
+          },
+        ],
+      })
     },
     babel: {
       plugins: [
