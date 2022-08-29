@@ -11,9 +11,8 @@
       novalidate="novalidate"
       name="Contact"
       action="/gracias"
-      hidden
-      method="POST"
-      data-netlify
+      method="post"
+      data-netlify=""
       data-netlify-honeypot="bot-field"
       class="v-form"
     >
@@ -21,8 +20,8 @@
         <label for="form-name"
           >Por favor, no rellenes este campo si eres una persona. Si este campo
           tiene algún valor, no se enviará el formulario. Es una manera de
-          evitar spam.
-        </label>
+          evitar spam.<input name="bot-field"
+        /></label>
       </p>
       <input id="form-name" type="hidden" name="form-name" value="Contact" />
       <div
@@ -46,9 +45,7 @@
         <div class="v-input__control">
           <div class="v-input__slot">
             <fieldset aria-hidden="true">
-              <legend style="width: 0px">
-                <span class="notranslate">​</span>
-              </legend>
+              <legend style="width: 0px"><span>​</span></legend>
             </fieldset>
             <div class="v-text-field__slot">
               <label
@@ -86,6 +83,50 @@
           <div class="v-input__icon v-input__icon--prepend">
             <i
               aria-hidden="true"
+              class="v-icon notranslate mdi mdi-email theme--light"
+            ></i>
+          </div>
+        </div>
+        <div class="v-input__control">
+          <div class="v-input__slot">
+            <fieldset aria-hidden="true">
+              <legend style="width: 0px"><span>​</span></legend>
+            </fieldset>
+            <div class="v-text-field__slot">
+              <label
+                for="email"
+                class="v-label theme--light"
+                style="left: 0px; right: auto; position: absolute"
+                >e-mail (opcional)</label
+              ><input
+                required="required"
+                name="email"
+                id="email"
+                type="email"
+              />
+            </div>
+          </div>
+          <div class="v-text-field__details">
+            <div class="v-messages theme--light">
+              <div class="v-messages__wrapper"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="
+          v-input
+          theme--light
+          v-text-field
+          v-text-field--is-booted
+          v-text-field--enclosed
+          v-text-field--outlined
+        "
+      >
+        <div class="v-input__prepend-outer">
+          <div class="v-input__icon v-input__icon--prepend">
+            <i
+              aria-hidden="true"
               class="v-icon notranslate mdi mdi-map-marker theme--light"
             ></i>
           </div>
@@ -93,9 +134,7 @@
         <div class="v-input__control">
           <div class="v-input__slot">
             <fieldset aria-hidden="true">
-              <legend style="width: 0px">
-                <span class="notranslate">​</span>
-              </legend>
+              <legend style="width: 0px"><span>​</span></legend>
             </fieldset>
             <div class="v-text-field__slot">
               <label
@@ -139,18 +178,16 @@
         </div>
         <div class="v-input__control">
           <div class="v-input__slot">
+            <fieldset aria-hidden="true">
+              <legend style="width: 0px"><span>​</span></legend>
+            </fieldset>
             <div class="v-text-field__slot">
               <label
-                for="input-55"
+                for="input-126"
                 class="v-label theme--light"
                 style="left: 0px; right: auto; position: absolute"
                 >Comentarios (opcional)</label
-              ><textarea
-                name="comments"
-                id="input-55"
-                rows="5"
-                spellcheck="false"
-              ></textarea>
+              ><textarea name="comments" id="input-126" rows="5"></textarea>
             </div>
           </div>
           <div class="v-text-field__details">

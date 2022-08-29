@@ -10,8 +10,8 @@
       <label for="form-name"
         >Por favor, no rellenes este campo si eres una persona. Si este campo
         tiene algún valor, no se enviará el formulario. Es una manera de evitar
-        spam.</label
-      >
+        spam.<input name="bot-field"
+      /></label>
     </p>
     <input id="form-name" type="hidden" name="form-name" :value="formName" />
     <v-text-field
@@ -26,6 +26,15 @@
       :rules="[rules.required]"
     ></v-text-field>
     <v-text-field
+      id="email"
+      label="e-mail (opcional)"
+      required
+      outlined
+      type="email"
+      name="email"
+      prepend-icon="mdi-email"
+    ></v-text-field>
+    <v-text-field
       id="place"
       label="Localidad"
       auto-complete="home city"
@@ -36,6 +45,7 @@
       :rules="[rules.required]"
     ></v-text-field>
     <v-textarea
+      :rules="[rules.notSpammy]"
       outlined
       name="comments"
       label="Comentarios (opcional)"
@@ -55,10 +65,17 @@ export default {
       formName: 'Contact',
       rules: {
         required: (value) => !!value || 'Este campo es obligatorio.',
+        notSpammy: (value) =>
+          !String(value).match(/\bporn\b|\bxxx\b|\bsexy?\b/) ||
+          `Incluye palabras malsonantes`,
       },
     }
   },
 }
 </script>
 
-<style></style>
+<style scoped>
+::v-deep .v-input.error--text {
+  margin-bottom: 1em;
+}
+</style>
