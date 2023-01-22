@@ -40,7 +40,7 @@ export default {
   },
   data() {
     return {
-      telephones: ['605 78 42 14', '605 94 01 67'],
+      telephones: ['605 94 01 67'],
     }
   },
 }
